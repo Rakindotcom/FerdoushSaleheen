@@ -1,0 +1,1921 @@
+# Product Requirements Document (PRD)
+
+## Dr. Ferdous Salehin Official Digital Platform
+
+**Product Type:** Author, Dawah, Knowledge, Podcast, Audiobook and Publication Platform
+**Primary Language:** Bangla
+**Secondary Language Support:** English where required
+**Primary Audience:** Bangladesh and Bangla-speaking audiences worldwide
+**Prepared by:** FrameCipher
+**Version:** 1.0
+**Status:** Development Specification
+
+---
+
+# 1. Product Overview
+
+The proposed platform will be the official digital home of **Dr. Ferdous Salehin**, bringing his books, Islamic reflections, podcast, audiobook, lectures, videos, articles, events, and future intellectual work into a single structured digital ecosystem.
+
+The website should not function merely as a promotional website for the book **“সুরা আল-ফাতিহা: সাতটি আয়াত”**.
+
+The product should instead establish a scalable digital platform where visitors can:
+
+* Discover Dr. Ferdous Salehin and his work
+* Learn about his books
+* Read selected Islamic reflections
+* Study content related to Surah Al-Fatihah
+* Listen to podcast episodes
+* Listen to audiobooks directly on the website
+* Watch lectures and videos
+* Read articles
+* Order physical books
+* Discover upcoming events
+* Submit speaking invitations
+* Download selected dawah resources
+* Subscribe for future updates
+* Share beneficial content with others
+
+The first book will serve as one of the major pillars of the platform, while the architecture must support future books, podcast series, audiobooks, lectures, courses, and other initiatives.
+
+---
+
+# 2. Product Vision
+
+The long-term vision is to create a permanent and credible digital platform for Dr. Ferdous Salehin's intellectual and dawah work.
+
+Social media should serve primarily as a distribution channel. The website should become the permanent destination where the complete body of work is organised, searchable, accessible, and preserved.
+
+The platform should gradually become a digital library containing:
+
+* Books
+* Audiobooks
+* Podcasts
+* Islamic reflections
+* Qur'anic discussions
+* Lectures
+* Articles
+* Video content
+* Events
+* Reader experiences
+* Downloadable resources
+* Future publications
+
+The experience should feel more like an Islamic knowledge and intellectual platform than a conventional personal website.
+
+---
+
+# 3. Product Objectives
+
+The primary objectives are:
+
+### 3.1 Establish an Official Digital Identity
+
+Create one authoritative online destination representing Dr. Ferdous Salehin, his biography, publications, work, media appearances, and future initiatives.
+
+### 3.2 Extend the Reach of the Book
+
+Allow visitors who discover the author or book through Facebook, YouTube, Google, podcasts, events, or personal recommendations to continue learning through the website.
+
+### 3.3 Create a Permanent Dawah Platform
+
+Provide useful Islamic content even for visitors who have not purchased the physical book.
+
+### 3.4 Build a Podcast Destination
+
+Create a dedicated podcast environment where episodes remain organised and accessible independently of YouTube, Facebook, Spotify, or other external platforms.
+
+### 3.5 Provide an Integrated Audiobook Experience
+
+Allow visitors to listen to audiobook chapters directly from the website through a dedicated player.
+
+### 3.6 Centralise Content
+
+Bring books, articles, podcasts, videos, events, and resources under a common content architecture.
+
+### 3.7 Build Direct Audience Relationships
+
+Create mechanisms for newsletter subscription, inquiries, speaking invitations, reader feedback, book orders, and future communication.
+
+### 3.8 Prepare for Future Expansion
+
+The underlying structure should support additional books, audiobook series, podcasts, Islamic resources, courses, and other digital initiatives without requiring a complete website rebuild.
+
+---
+
+# 4. Non-Goals for Version 1
+
+The following are explicitly outside the initial scope:
+
+* Admin dashboard
+* Full online learning management system
+* Student dashboard
+* Paid membership system
+* Community forum
+* Mobile application
+* Native podcast hosting infrastructure
+* Advanced e-commerce inventory management
+* Courier API integration
+* Automated warehouse management
+* Advanced donation management
+* Live-streaming infrastructure
+* Full social networking functionality
+* Advanced user-generated content
+* Custom mobile audiobook application
+
+These may be considered in later phases.
+
+---
+
+# 5. Target Users
+
+## 5.1 General Readers
+
+People interested in Dr. Ferdous Salehin, his books, Islamic reflections, and educational work.
+
+## 5.2 Existing Book Readers
+
+People who already own the book and want additional explanations, videos, audio materials, or related resources.
+
+## 5.3 Potential Book Buyers
+
+Visitors who discover the book through social media, Google, events, recommendations, podcasts, or videos.
+
+## 5.4 Podcast Listeners
+
+Users who prefer long-form discussions and want an organised archive of podcast episodes.
+
+## 5.5 Audiobook Listeners
+
+People who prefer listening instead of reading, including commuters and users who consume audio content while performing other activities.
+
+## 5.6 Islamic Knowledge Seekers
+
+Users searching for content about:
+
+* Surah Al-Fatihah
+* Salah
+* Qur'anic reflection
+* Worship
+* Life lessons
+* Spiritual development
+* The Hereafter
+* Islamic perspectives on everyday life
+
+## 5.7 Students and Young Professionals
+
+Users who primarily consume digital content and may discover Dr. Ferdous Salehin through social media.
+
+## 5.8 Bangladeshi Diaspora
+
+Bangla-speaking Muslims outside Bangladesh who may not have immediate access to the physical book.
+
+## 5.9 Organisations
+
+Mosques, universities, educational institutions, community organisations, media organisations, and event organisers interested in inviting Dr. Ferdous Salehin.
+
+---
+
+# 6. Information Architecture
+
+The primary navigation should remain concise.
+
+### Main Navigation
+
+**Home | About | Books | Podcast | Audiobook | Reflections | Videos | Events | Contact**
+
+Secondary destinations may include:
+
+* Surah Al-Fatihah
+* Resources
+* Media
+* Reviews
+* Order Book
+* Search
+
+On mobile, these should appear inside a clean hamburger navigation.
+
+---
+
+# 7. Homepage Requirements
+
+The homepage should function as the central discovery page.
+
+It must not overwhelm visitors with every available item. Instead, it should present the most important categories and direct visitors deeper into the platform.
+
+## 7.1 Hero Section
+
+The first screen should establish:
+
+* Dr. Ferdous Salehin
+* His central intellectual and dawah positioning
+* Current featured publication
+* A clear primary action
+
+Possible primary actions:
+
+**বইটি সম্পর্কে জানুন**
+
+**শুনুন**
+
+**পড়ুন**
+
+**ভিডিও দেখুন**
+
+The hero should use high-quality author photography and/or the featured book.
+
+## 7.2 Featured Book
+
+Display:
+
+* Book cover
+* Full title
+* Short description
+* Key theme
+* Order button
+* Learn more button
+* Audiobook button if available
+
+## 7.3 Explore the Platform
+
+Provide visual shortcuts to:
+
+* Books
+* Podcast
+* Audiobook
+* Reflections
+* Videos
+* Resources
+
+## 7.4 Featured Podcast
+
+Show one prominently selected podcast episode.
+
+Required information:
+
+* Thumbnail
+* Episode title
+* Short description
+* Duration
+* Play/watch button
+* Link to complete podcast archive
+
+## 7.5 Featured Audiobook
+
+Show:
+
+* Audiobook cover
+* Title
+* Short description
+* Current availability
+* Listen now button
+
+## 7.6 Featured Reflection
+
+Highlight one selected written reflection.
+
+Display:
+
+* Title
+* Short excerpt
+* Topic/category
+* Read more
+
+## 7.7 Latest Videos
+
+Display three to six recent or selected videos.
+
+## 7.8 Reader Feedback
+
+Show selected reader testimonials regarding:
+
+* The book
+* Podcast
+* Lectures
+* Reflections
+
+## 7.9 Newsletter CTA
+
+Example:
+
+**নতুন লেখা, পডকাস্ট, বই ও আয়োজনের খবর পেতে যুক্ত থাকুন।**
+
+Fields:
+
+* Name
+* Email address
+
+Optional:
+
+* Mobile number
+
+## 7.10 Footer
+
+The footer should contain:
+
+* About
+* Books
+* Podcast
+* Audiobook
+* Reflections
+* Videos
+* Contact
+* Social media
+* Privacy Policy
+* Terms
+* Copyright notice
+
+---
+
+# 8. About Dr. Ferdous Salehin
+
+The About section should provide a credible and complete biography.
+
+## Required Content
+
+* Professional photograph
+* Full name
+* Short introduction
+* Extended biography
+* Educational background
+* Professional background
+* Writing journey
+* Intellectual interests
+* Dawah journey
+* Motivation behind writing the book
+* Publications
+* Speaking activities
+* Media appearances
+* Current areas of work
+* Future vision
+
+The page should be written professionally and avoid excessive self-promotion.
+
+The purpose is credibility and context.
+
+---
+
+# 9. Books Module
+
+The website architecture must support multiple books.
+
+The current book should be treated as the first publication, not as a hard-coded one-book website.
+
+## 9.1 Books Listing Page
+
+Each book card should show:
+
+* Cover
+* Title
+* Short description
+* Publication status
+* Read more
+* Order button
+
+Filters are not necessary initially unless the number of books increases substantially.
+
+## 9.2 Individual Book Page
+
+Each book must have its own permanent URL.
+
+Example structure:
+
+`/books/surah-al-fatihah`
+
+The page should contain:
+
+### Book Information
+
+* Book cover
+* Title
+* Subtitle
+* Author
+* Description
+* Publication information
+* Format
+* Language
+* Price
+* Availability
+
+### Why This Book
+
+Explain:
+
+* Why it was written
+* What problem or question it addresses
+* Who should read it
+
+### Key Themes
+
+For the current book:
+
+* Life
+* Worship
+* Surah Al-Fatihah
+* Guidance
+* Reflection
+* The Hereafter
+
+### Selected Excerpts
+
+Provide approved excerpts from the book.
+
+### Sample Preview
+
+Optionally allow users to preview selected pages or a sample chapter.
+
+### Related Content
+
+Show:
+
+* Related podcast episodes
+* Related videos
+* Related reflections
+* Related audiobook
+* Related resources
+
+### Reader Reviews
+
+Display selected testimonials.
+
+### Book Order
+
+Prominent CTA:
+
+**বইটি অর্ডার করুন**
+
+---
+
+# 10. Surah Al-Fatihah Knowledge Section
+
+This should be treated as a major dawah component of the platform.
+
+The objective is to provide meaningful educational value independently of purchasing the book.
+
+## 10.1 Main Surah Al-Fatihah Page
+
+Include:
+
+* Introduction
+* Importance of Surah Al-Fatihah
+* Seven verses overview
+* Link to each verse
+* Related book
+* Related podcast
+* Related audiobook
+* Related videos
+* Relevant reflections
+
+## 10.2 Individual Verse Pages
+
+Each verse may have its own permanent URL.
+
+Example:
+
+`/al-fatihah/alhamdulillahi-rabbil-alamin`
+
+Each page should support:
+
+* Arabic verse
+* Bangla translation
+* Optional English translation
+* Word-by-word meaning
+* Explanation
+* Tafsir
+* Author's reflection
+* Practical takeaway
+* Connection with salah
+* Related book excerpt
+* Related video
+* Related podcast
+* Related audiobook chapter
+* References
+* Share functionality
+
+## 10.3 Content Classification
+
+Religious content must visually distinguish:
+
+**Qur'anic Text**
+
+**Translation**
+
+**Tafsir**
+
+**Author's Reflection**
+
+**Practical Reflection**
+
+**Reference**
+
+This is important so visitors can clearly understand what is scriptural text, scholarly interpretation, or personal reflection.
+
+---
+
+# 11. Podcast Module
+
+The podcast should be a first-class product component, not simply a collection of YouTube links.
+
+## 11.1 Podcast Landing Page
+
+The page should display:
+
+* Podcast identity/cover
+* Podcast title
+* Description
+* Host information
+* Featured episode
+* Latest episodes
+* Episode archive
+* Platform links where relevant
+
+## 11.2 Podcast Episode Cards
+
+Each card should contain:
+
+* Episode thumbnail
+* Episode number, where applicable
+* Episode title
+* Short description
+* Publication date
+* Duration
+* Topic/category
+* Play/watch CTA
+
+## 11.3 Individual Podcast Episode Page
+
+Each episode should have a permanent page.
+
+Example:
+
+`/podcast/understanding-al-fatihah`
+
+Required components:
+
+### Episode Header
+
+* Episode title
+* Cover/thumbnail
+* Publication date
+* Duration
+* Topic
+
+### Episode Description
+
+A detailed overview of what is discussed.
+
+### Audio/Video Player
+
+The platform should support:
+
+* Embedded audio
+* Embedded YouTube video
+* External Spotify link where relevant
+
+If both video and audio versions exist, the user should be able to choose.
+
+### Episode Notes
+
+Include:
+
+* Main topics
+* Important concepts
+* Book references
+* Related Qur'anic verses where appropriate
+
+### Related Content
+
+Show:
+
+* Relevant book
+* Relevant audiobook chapter
+* Related reflections
+* Related videos
+* Related podcast episodes
+
+### Sharing
+
+Support sharing to:
+
+* Facebook
+* WhatsApp
+* Messenger
+* LinkedIn
+* Copy link
+
+## 11.4 Podcast Search
+
+Users should be able to search episodes by:
+
+* Episode title
+* Description
+* Keyword
+* Topic
+
+---
+
+# 12. Audiobook Module
+
+The audiobook module should provide a dedicated listening experience.
+
+It should not feel like a basic list of downloadable MP3 files.
+
+## 12.1 Audiobook Library
+
+The architecture must support multiple audiobooks over time.
+
+Each audiobook card should include:
+
+* Cover
+* Title
+* Author
+* Total duration
+* Number of chapters
+* Description
+* Listen button
+
+## 12.2 Individual Audiobook Page
+
+Example:
+
+`/audiobooks/surah-al-fatihah`
+
+Display:
+
+* Cover
+* Title
+* Author
+* Description
+* Number of chapters
+* Total duration
+* Related physical book
+* Start listening CTA
+
+## 12.3 Chapter Listing
+
+Each chapter should display:
+
+* Chapter number
+* Chapter title
+* Duration
+* Play button
+
+Example:
+
+**অধ্যায় ০১**
+ভূমিকা
+12:34
+
+**অধ্যায় ০২**
+আলহামদুলিল্লাহি রব্বিল আলামিন
+18:42
+
+## 12.4 Audio Player
+
+Required functionality:
+
+* Play
+* Pause
+* Seek
+* Progress bar
+* Current playback time
+* Total duration
+* Volume control
+* Playback speed
+* Previous chapter
+* Next chapter
+
+Recommended playback speeds:
+
+* 0.75×
+* 1×
+* 1.25×
+* 1.5×
+* 2×
+
+## 12.5 Persistent Audio Playback
+
+If technically feasible within implementation, audio should continue while the user navigates between website pages.
+
+For example:
+
+A visitor starts Chapter 3, opens an article, and the audio continues playing.
+
+This significantly improves audiobook usability.
+
+## 12.6 Resume Listening
+
+Where browser storage permits, the website should remember:
+
+* Last audiobook
+* Last chapter
+* Approximate playback position
+
+User account creation is not required for this feature.
+
+Browser local storage may be used.
+
+## 12.7 Audiobook Access
+
+Version 1 should support configurable access:
+
+* Fully free audiobook
+* Selected free chapters
+* Sample chapter
+* External purchase link
+
+A paid account-based audiobook system is not part of Version 1.
+
+## 12.8 Related Content
+
+Each audiobook should connect to:
+
+* Physical book
+* Podcast episodes
+* Articles
+* Videos
+* Relevant Surah Al-Fatihah content
+
+---
+
+# 13. Reflections and Articles
+
+This section will serve as the long-form written knowledge library.
+
+## 13.1 Article Categories
+
+Potential categories:
+
+* Qur'anic Reflection
+* Surah Al-Fatihah
+* Salah
+* Worship
+* Life
+* Guidance
+* Personal Development
+* Hereafter
+* Book Reflections
+* Ramadan
+* Faith and Character
+
+Categories must remain configurable.
+
+## 13.2 Article Listing
+
+Each card should display:
+
+* Featured image
+* Title
+* Category
+* Short description
+* Publication date
+* Estimated reading time
+
+## 13.3 Individual Article
+
+Required components:
+
+* Title
+* Category
+* Publication date
+* Featured image
+* Article content
+* Qur'anic references where applicable
+* Related content
+* Author information
+* Share buttons
+
+## 13.4 Reading Experience
+
+Typography should be optimised for long Bangla reading.
+
+Requirements:
+
+* Comfortable line height
+* Appropriate font size
+* Limited text width
+* Clear headings
+* Adequate whitespace
+* Good contrast
+* Proper Arabic rendering
+
+---
+
+# 14. Video and Lecture Library
+
+The website should provide an organised archive of video content.
+
+## Content Types
+
+* Lectures
+* Short reminders
+* Podcast videos
+* Interviews
+* Book discussions
+* Tafsir discussions
+* Event recordings
+* Media appearances
+
+## Video Listing
+
+Each item should display:
+
+* Thumbnail
+* Title
+* Category
+* Duration
+* Short description
+
+## Video Detail Page
+
+Include:
+
+* Video player
+* Title
+* Description
+* Related book
+* Related article
+* Related podcast
+* Related videos
+* Share options
+
+Videos should generally be embedded from YouTube or another approved platform instead of hosting large video files directly.
+
+---
+
+# 15. Media Section
+
+The Media section should collect important public appearances.
+
+Possible content:
+
+* Television appearances
+* Newspaper coverage
+* Online publications
+* Interviews
+* Podcast guest appearances
+* Event photographs
+* Press features
+
+Each media item should contain:
+
+* Title
+* Media outlet
+* Date
+* Thumbnail/logo
+* Description
+* External link where appropriate
+
+---
+
+# 16. Events and Speaking
+
+## 16.1 Events Listing
+
+Display:
+
+* Upcoming events
+* Past events
+
+Each event should contain:
+
+* Event name
+* Date
+* Time
+* Venue
+* City
+* Organiser
+* Description
+* Event artwork
+* Registration link where applicable
+
+## 16.2 Event Detail Page
+
+Include:
+
+* Full event information
+* Speaker information
+* Location
+* Schedule
+* Registration details
+* Related media after the event
+
+## 16.3 Speaking Invitation
+
+Organisations should be able to invite Dr. Ferdous Salehin.
+
+Form fields:
+
+* Organisation name
+* Contact person's name
+* Email
+* Phone number
+* Event name
+* Event type
+* Proposed date
+* Location
+* Expected audience
+* Topic
+* Additional message
+
+After submission:
+
+**আপনার অনুরোধটি সফলভাবে পাঠানো হয়েছে।**
+
+The form should also trigger a notification to the configured recipient email.
+
+---
+
+# 17. Reader Community and Testimonials
+
+This will not operate as a public forum.
+
+It should instead create a controlled presentation of reader experiences.
+
+Possible content:
+
+* Written reviews
+* Reader photographs
+* Video testimonials
+* Book experiences
+* Reflections
+* Institutional endorsements
+
+## Reader Submission Form
+
+Visitors may submit:
+
+* Name
+* Photograph, optional
+* Feedback
+* Book name
+* City/country
+* Permission to publish
+
+Nothing submitted should automatically appear publicly.
+
+Publication should require manual approval outside the scope of this frontend PRD.
+
+---
+
+# 18. Book Order System
+
+The website should provide a simple book-order process suitable for Bangladesh.
+
+## 18.1 Order CTA
+
+Buttons should appear throughout:
+
+**বইটি অর্ডার করুন**
+
+## 18.2 Order Form
+
+Required fields:
+
+* Full name
+* Mobile number
+* Email, optional
+* District
+* Full delivery address
+* Book
+* Quantity
+* Payment method
+* Additional note
+
+## 18.3 Payment Options
+
+Version 1 may support:
+
+* Cash on delivery
+* bKash payment instructions
+* Nagad payment instructions
+* Bank transfer instructions
+
+A full automated payment gateway is outside initial scope unless separately approved.
+
+## 18.4 Order Confirmation
+
+After successful submission:
+
+Display:
+
+* Confirmation message
+* Order/reference number if implemented
+* Book
+* Quantity
+* Delivery summary
+* Contact information
+
+Example:
+
+**আপনার অর্ডারটি গ্রহণ করা হয়েছে। শিগগিরই আমাদের পক্ষ থেকে আপনার সঙ্গে যোগাযোগ করা হবে।**
+
+## 18.5 WhatsApp Order
+
+A secondary option should allow the visitor to initiate an order via WhatsApp.
+
+---
+
+# 19. Bulk Book and Institutional Inquiry
+
+Provide a dedicated form for:
+
+* Mosques
+* Madrasas
+* Universities
+* Schools
+* Organisations
+* Companies
+* Study circles
+* Community groups
+
+Fields:
+
+* Organisation
+* Contact person
+* Phone
+* Email
+* Book
+* Estimated quantity
+* Purpose
+* Delivery location
+* Message
+
+---
+
+# 20. Dawah Resources
+
+A dedicated resources library should allow visitors to access selected free materials.
+
+Possible resources:
+
+* PDF guides
+* Surah Al-Fatihah study material
+* Reflection sheets
+* Salah guides
+* Selected book excerpts
+* Presentation materials
+* Study notes
+* Ramadan resources
+* Printable materials
+
+Each resource card should include:
+
+* Title
+* Description
+* File type
+* File size, where applicable
+* Download/view button
+
+---
+
+# 21. Contact Page
+
+The Contact page should serve different inquiry types.
+
+## Contact Categories
+
+* General Inquiry
+* Book Order Support
+* Media Inquiry
+* Speaking Invitation
+* Collaboration
+* Institutional Inquiry
+
+## Required Contact Information
+
+Where provided:
+
+* Official email
+* Phone
+* WhatsApp
+* Facebook
+* YouTube
+* LinkedIn
+* Other social profiles
+
+---
+
+# 22. Global Search
+
+Search should be available across the website.
+
+The system should index:
+
+* Books
+* Articles
+* Podcast episodes
+* Audiobooks
+* Audiobook chapters
+* Videos
+* Events
+* Resources
+
+Example search:
+
+**“আলহামদুলিল্লাহ”**
+
+Potential results may include:
+
+* Relevant verse reflection
+* Podcast episode
+* Article
+* Audiobook chapter
+* Video
+
+## Search Results Page
+
+Each result should show:
+
+* Content type
+* Title
+* Short excerpt
+* Link
+
+Users should be able to filter by content type.
+
+---
+
+# 23. Cross-Content Recommendation System
+
+A major product requirement is contextual linking between content formats.
+
+For example:
+
+A user reading a reflection on a verse should be shown:
+
+**এই বিষয়ের আরও কনটেন্ট**
+
+* Listen to related audiobook chapter
+* Watch related lecture
+* Listen to related podcast
+* Read related article
+* View related book
+
+This creates a connected content ecosystem rather than isolated pages.
+
+---
+
+# 24. Newsletter Subscription
+
+Users should be able to subscribe for future content.
+
+Potential updates:
+
+* New articles
+* New podcast episodes
+* New audiobook releases
+* New books
+* Events
+* Selected dawah content
+
+Minimum fields:
+
+* Name
+* Email
+
+Consent should be clearly indicated.
+
+---
+
+# 25. Social Sharing
+
+Share functionality should be available for:
+
+* Articles
+* Podcast episodes
+* Videos
+* Book pages
+* Reflections
+* Selected verse pages
+
+Supported destinations:
+
+* Facebook
+* WhatsApp
+* Messenger
+* LinkedIn
+* Copy Link
+
+Sharing previews should use appropriate Open Graph metadata.
+
+---
+
+# 26. Language Requirements
+
+The website will primarily use Bangla.
+
+Requirements:
+
+* Proper Bangla Unicode rendering
+* **Anek Bangla** as the primary Bangla interface font
+* Appropriate fallback fonts
+* Proper Arabic script rendering
+* English support for selected sections
+* Language-ready architecture for future bilingual expansion
+
+The design must not use fonts that distort Bangla conjunct characters or diacritics.
+
+---
+
+# 27. Visual Design Direction
+
+The website should communicate:
+
+* Knowledge
+* Trust
+* Reflection
+* Spirituality
+* Professionalism
+* Premium publishing quality
+
+## Visual Language
+
+Recommended palette:
+
+* Deep black
+* Charcoal
+* Warm gold
+* Off-white
+* White
+
+The gold should be used selectively rather than heavily.
+
+## Design Principles
+
+* Minimal
+* Editorial
+* Premium
+* Spacious
+* Strong typography
+* Clear hierarchy
+* Content-first
+* No unnecessary animation
+* No cluttered Islamic ornamentation
+
+Subtle geometric or Islamic-inspired motifs may be used as supporting visual elements.
+
+---
+
+# 28. Responsive Requirements
+
+The website must work properly on:
+
+* Mobile
+* Tablet
+* Laptop
+* Desktop
+
+Mobile is particularly important because a significant portion of social-media referral traffic will likely arrive from smartphones.
+
+## Mobile Requirements
+
+* Large tap targets
+* Readable Bangla typography
+* Sticky or accessible navigation
+* Responsive audio player
+* Responsive podcast player
+* Proper video scaling
+* Fast image loading
+* Easy book ordering
+* Simplified forms
+
+No horizontal scrolling should occur under normal usage.
+
+---
+
+# 29. Performance Requirements
+
+Target performance expectations:
+
+### Core Pages
+
+Initial meaningful content should load quickly on common mobile connections.
+
+### Images
+
+All images should be:
+
+* Compressed
+* Responsively sized
+* Lazy-loaded where appropriate
+
+### Audio
+
+Audiobook files should support streaming rather than requiring complete download before playback.
+
+### Video
+
+Videos should preferably use external video platforms and lazy-loaded embeds.
+
+### Caching
+
+Static assets should use browser and server-side caching where appropriate.
+
+---
+
+# 30. SEO Requirements
+
+Every major piece of content should have its own indexable URL.
+
+Examples:
+
+`/books/surah-al-fatihah`
+
+`/podcast/episode-name`
+
+`/audiobooks/surah-al-fatihah`
+
+`/reflections/article-name`
+
+`/videos/video-name`
+
+`/events/event-name`
+
+## SEO Metadata
+
+Each page should support:
+
+* SEO title
+* Meta description
+* Canonical URL
+* Open Graph image
+* Open Graph description
+* Structured headings
+* Image alt text
+
+## Technical SEO
+
+Include:
+
+* XML sitemap
+* Robots.txt
+* Search-engine-friendly URLs
+* Canonical tags
+* Mobile optimisation
+* Structured data where appropriate
+
+Potential structured data:
+
+* Person
+* Book
+* Article
+* PodcastEpisode
+* AudioObject
+* VideoObject
+* Event
+* BreadcrumbList
+
+---
+
+# 31. Analytics Requirements
+
+Google Analytics or an equivalent analytics service should track:
+
+* Page views
+* Book page visits
+* Book-order clicks
+* Order-form submissions
+* Podcast play clicks
+* Audiobook play clicks
+* Video interactions
+* Newsletter subscriptions
+* Speaking inquiry submissions
+* Resource downloads
+* Search usage
+* WhatsApp clicks
+
+Key events should be defined so future marketing decisions can be based on actual user behaviour.
+
+---
+
+# 32. Accessibility Requirements
+
+The website should follow reasonable accessibility practices.
+
+Requirements include:
+
+* Sufficient text contrast
+* Keyboard-accessible navigation
+* Descriptive image alt text
+* Semantic headings
+* Properly labelled forms
+* Visible focus states
+* Accessible buttons
+* Responsive text scaling
+* Audio controls accessible via keyboard
+* Captions or transcripts where available for video/audio
+
+---
+
+# 33. Security Requirements
+
+The production website should include:
+
+* HTTPS
+* SSL certificate
+* Secure forms
+* Input validation
+* Server-side validation
+* Spam protection
+* Rate limiting where appropriate
+* CSRF protection where applicable
+* Protection against common injection attacks
+* Secure handling of visitor information
+
+Sensitive payment information should not be stored unless a compliant payment provider is used.
+
+---
+
+# 34. Privacy Requirements
+
+The platform may collect:
+
+* Names
+* Phone numbers
+* Email addresses
+* Delivery addresses
+* Event inquiry information
+* Newsletter subscriptions
+
+A Privacy Policy should explain:
+
+* What data is collected
+* Why it is collected
+* How it is used
+* How long it is retained where applicable
+* How a user may request removal
+
+Marketing emails should only be sent to users who have intentionally subscribed.
+
+---
+
+# 35. URL Structure
+
+Recommended clean URL architecture:
+
+```text
+/
+ /about
+ /books
+ /books/{slug}
+
+ /al-fatihah
+ /al-fatihah/{verse-slug}
+
+ /podcast
+ /podcast/{episode-slug}
+
+ /audiobooks
+ /audiobooks/{audiobook-slug}
+
+ /reflections
+ /reflections/{article-slug}
+
+ /videos
+ /videos/{video-slug}
+
+ /events
+ /events/{event-slug}
+
+ /resources
+ /media
+ /reviews
+ /order
+ /contact
+ /search
+ /privacy
+ /terms
+```
+
+---
+
+# 36. Content Relationships
+
+Content entities should support relationships.
+
+Example:
+
+**Book**
+→ audiobook
+→ articles
+→ videos
+→ podcasts
+
+**Podcast Episode**
+→ book
+→ related article
+→ related video
+→ related audiobook chapter
+
+**Verse**
+→ reflection
+→ podcast
+→ video
+→ audiobook chapter
+→ book excerpt
+
+**Event**
+→ photos
+→ videos
+→ related article
+
+This relationship architecture is a critical requirement.
+
+---
+
+# 37. Core Content Models
+
+## Book
+
+* Title
+* Subtitle
+* Slug
+* Cover
+* Description
+* Author
+* Price
+* Format
+* Language
+* Publication information
+* Availability
+* Excerpts
+* Related content
+
+## Podcast
+
+* Podcast title
+* Description
+* Cover
+* Host
+* Platform links
+
+## Podcast Episode
+
+* Episode number
+* Title
+* Slug
+* Thumbnail
+* Description
+* Publication date
+* Duration
+* Audio source
+* Video source
+* Topics
+* Related content
+
+## Audiobook
+
+* Title
+* Cover
+* Description
+* Related book
+* Total duration
+* Chapters
+
+## Audiobook Chapter
+
+* Chapter number
+* Title
+* Audio URL
+* Duration
+* Description
+* Related content
+
+## Article
+
+* Title
+* Slug
+* Featured image
+* Category
+* Excerpt
+* Body
+* Publication date
+* References
+* Related content
+
+## Video
+
+* Title
+* Thumbnail
+* Video source
+* Duration
+* Category
+* Description
+* Related content
+
+## Event
+
+* Title
+* Date
+* Time
+* Venue
+* Location
+* Description
+* Event image
+* Registration link
+
+## Resource
+
+* Title
+* Description
+* Thumbnail
+* File
+* File type
+* Category
+
+---
+
+# 38. Primary User Journeys
+
+## Journey A: Social Media to Book Order
+
+Facebook post
+→ website article
+→ related book
+→ book details
+→ order
+→ confirmation
+
+## Journey B: Podcast Listener
+
+Google/social link
+→ podcast episode
+→ starts listening
+→ sees related book
+→ explores book
+→ orders book
+
+## Journey C: Audiobook Listener
+
+Homepage
+→ audiobook
+→ chooses chapter
+→ listens
+→ navigates to related reflection
+→ audio continues
+→ returns to next chapter
+
+## Journey D: Surah Al-Fatihah Learner
+
+Google search
+→ verse page
+→ reads explanation
+→ watches related lecture
+→ listens to related audiobook chapter
+→ discovers book
+
+## Journey E: Event Organiser
+
+Searches Dr. Ferdous Salehin
+→ About page
+→ Events
+→ Speaking Invitation
+→ submits invitation
+
+---
+
+# 39. Error States
+
+The website must provide clear messages for common errors.
+
+## Empty Search
+
+**আপনার অনুসন্ধানের সঙ্গে মিল পাওয়া যায়নি। অন্য কোনো শব্দ দিয়ে খুঁজে দেখুন।**
+
+## Failed Form Submission
+
+**তথ্য পাঠানো সম্ভব হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।**
+
+## Missing Page
+
+Custom 404 page:
+
+**এই পৃষ্ঠাটি পাওয়া যায়নি।**
+
+Provide links to:
+
+* Home
+* Books
+* Podcast
+* Reflections
+
+## Missing Audio
+
+If an audiobook chapter is unavailable:
+
+**এই অডিওটি বর্তমানে পাওয়া যাচ্ছে না।**
+
+The page itself should remain usable.
+
+---
+
+# 40. Loading States
+
+Audio, video, search, and forms should clearly indicate loading.
+
+Examples:
+
+* Audio loading indicator
+* Form submitting state
+* Search loading state
+* Image placeholder
+
+Buttons should be temporarily disabled during form submission to prevent duplicate requests.
+
+---
+
+# 41. Browser Compatibility
+
+The website should support current mainstream versions of:
+
+* Google Chrome
+* Microsoft Edge
+* Firefox
+* Safari
+* Chrome for Android
+* Safari for iOS
+
+The primary experience should remain functional even if certain cosmetic effects are unsupported.
+
+---
+
+# 42. QA Requirements
+
+Before launch, testing should include:
+
+### Functional Testing
+
+* Navigation
+* Links
+* Forms
+* Book ordering
+* Audio playback
+* Podcast playback
+* Video playback
+* Search
+* Downloads
+* Newsletter subscription
+
+### Responsive Testing
+
+* Android
+* iPhone
+* Tablet
+* Laptop
+* Desktop
+
+### Content Testing
+
+* Bangla typography
+* Arabic rendering
+* Book information
+* Links
+* Images
+* Audio files
+* Video embeds
+
+### SEO Testing
+
+* Metadata
+* Sitemap
+* Indexability
+* Canonical URLs
+* Structured headings
+
+### Performance Testing
+
+* Image optimisation
+* Initial load speed
+* Mobile experience
+* Audio streaming behaviour
+
+---
+
+# 43. Launch Criteria
+
+The website will be considered ready for public launch when:
+
+* All primary pages are complete
+* Navigation works
+* Required content is uploaded
+* Book-order system works
+* Podcast player works
+* Audiobook player works
+* Forms successfully deliver submissions
+* Search works
+* Mobile layouts are approved
+* SSL is enabled
+* Analytics is configured
+* SEO essentials are implemented
+* No critical bugs remain
+* Client-approved religious content is published correctly
+
+---
+
+# 44. Initial Content Requirements
+
+Before development completion, the following should be provided or finalised:
+
+* Approved author biography
+* Professional author photographs
+* Book cover
+* Book description
+* Book price
+* Book availability
+* Approved excerpts
+* Audiobook files
+* Audiobook chapter names
+* Podcast files or platform links
+* Podcast thumbnails
+* Podcast descriptions
+* Video links
+* Selected articles
+* Testimonials
+* Contact information
+* Social media links
+* Event information if available
+* Approved Qur'anic text
+* Approved translations
+* Approved tafsir/reference material
+
+Religious source material should be provided or approved by the client before publication.
+
+---
+
+# 45. Future Expansion
+
+The product architecture should make future development possible without rebuilding the platform.
+
+Potential Phase 2 additions include:
+
+* User accounts
+* Premium audiobook access
+* Online courses
+* Course progress tracking
+* Mobile app
+* Live classes
+* Donation platform
+* Sponsored book distribution
+* Children’s Islamic learning section
+* Advanced podcast feeds
+* Full English version
+* Additional languages
+* Digital book reader
+* Paid digital books
+* Advanced recommendation engine
+* Saved content
+* Bookmarks
+* Listening history synchronisation
+* Community features
+* Native notifications
+* Islamic learning programmes
+
+---
+
+# 46. Product Success Metrics
+
+The effectiveness of the platform should eventually be measured through:
+
+* Monthly website visitors
+* Returning visitors
+* Average article reading time
+* Podcast episode starts
+* Podcast completion behaviour where measurable
+* Audiobook chapter plays
+* Audiobook listening duration
+* Book-order conversions
+* WhatsApp order clicks
+* Newsletter subscriptions
+* Resource downloads
+* Speaking inquiries
+* Event inquiries
+* Organic Google traffic
+* Most searched topics
+* Most viewed Surah Al-Fatihah content
+* Cross-content journeys
+
+The primary goal should not be traffic alone.
+
+A stronger measure is whether visitors move deeper into the ecosystem, for example:
+
+**Article → Podcast → Audiobook → Book**
+
+or
+
+**Google Search → Al-Fatihah Reflection → Video → Book Order**
+
+---
+
+# 47. Final Product Definition
+
+The final website should be understood as:
+
+> **The official digital platform of Dr. Ferdous Salehin, bringing together his books, Surah Al-Fatihah reflections, podcast, audiobook, articles, videos, lectures, events, and future dawah initiatives within one permanent digital ecosystem.**
+
+The current book should provide the initial foundation, but the product should never be architected around only one book.
+
+The core principle is:
+
+> **The book introduces the message. The digital platform allows that message to be read, heard, watched, explored, shared, and preserved over time.**
+
+This PRD deliberately excludes the **admin dashboard**, as requested.

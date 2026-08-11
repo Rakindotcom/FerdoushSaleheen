@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --void: #050505;
+  --surface: #0d0d0d;
+  --surface-soft: #141310;
+  --ink: #f7f3e8;
+  --muted: #aaa69c;
+  --gold: #d6a642;
+  --gold-bright: #f0c86a;
+  --gold-dark: #8a6727;
+  --line: rgba(240, 200, 106, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--void);
+  color: var(--ink);
+  font-family: "Anek Bangla", system-ui, sans-serif;
+  font-synthesis: none;
+}
+
+::selection {
+  background: var(--gold);
+  color: #090806;
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--gold-bright);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.gold-text {
+  background: linear-gradient(110deg, #b9822e, #f2d080 52%, #b8822d);
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-veil {
+  background-image:
+    linear-gradient(rgba(214, 166, 66, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(214, 166, 66, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 62% 42%, black 16%, transparent 72%);
+}
+
+.section-title {
+  max-width: 46rem;
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.paper-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.45; transform: scale(0.96); }
+  50% { opacity: 0.78; transform: scale(1.04); }
+}
+
+@keyframes equalize {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+
+.animate-breathe {
+  animation: breathe 7s ease-in-out infinite;
+}
+
+.equalizer > span {
+  animation: equalize 1s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.equalizer > span:nth-child(2) { animation-delay: 0.2s; }
+.equalizer > span:nth-child(3) { animation-delay: 0.4s; }
+.equalizer > span:nth-child(4) { animation-delay: 0.1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
