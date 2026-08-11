@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
   background: var(--void);
   color: var(--ink);
-  font-family: "Anek Bangla", system-ui, sans-serif;
+  font-family: var(--font-montserrat), "Anek Bangla", system-ui, sans-serif;
   font-synthesis: none;
 }
 

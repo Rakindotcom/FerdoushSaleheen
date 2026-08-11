@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import "@fontsource/anek-bangla/400.css";
 import "@fontsource/anek-bangla/500.css";
 import "@fontsource/anek-bangla/600.css";
 import "@fontsource/anek-bangla/700.css";
 import "./globals.css";
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "ড. ফেরদৌস সালেহীন | Official Digital Platform",
+  title: {
+    default: "ড. ফেরদৌস সালেহীন | Official Digital Platform",
+    template: "%s",
+  },
   description:
     "ড. ফেরদৌস সালেহীনের বই, পডকাস্ট, অডিওবুক, কুরআনিক অনুধ্যান ও দাওয়াহ কার্যক্রমের ডিজিটাল প্ল্যাটফর্ম।",
   keywords: [
@@ -27,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="bn">
+    <html lang="bn" className={montserrat.variable}>
       <body>{children}</body>
     </html>
   );

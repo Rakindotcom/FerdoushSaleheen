@@ -2,20 +2,24 @@
 
 import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  ["পরিচিতি", "#about"],
-  ["বই", "#book"],
-  ["পডকাস্ট", "#podcast"],
-  ["অডিওবুক", "#audiobook"],
-  ["অনুধ্যান", "#reflections"],
-  ["ভিডিও", "#videos"],
+  ["পরিচিতি", "/about"],
+  ["বই", "/books"],
+  ["পডকাস্ট", "/podcast"],
+  ["অডিওবুক", "/audiobooks"],
+  ["অনুধ্যান", "/reflections"],
+  ["ভিডিও", "/videos"],
+  ["আয়োজন", "/events"],
+  ["যোগাযোগ", "/contact"],
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -36,7 +40,7 @@ export function SiteHeader() {
         )}
       >
         <div className="flex h-[4.5rem] items-center justify-between px-3 md:px-5">
-          <Link href="#top" className="group flex items-center gap-3" aria-label="হোম পেইজ">
+          <Link href="/" className="group flex items-center gap-3" aria-label="হোম পেইজ">
             <span className="grid size-10 place-items-center rounded-full border border-[#d6a642]/40 bg-[#d6a642]/10 text-lg font-semibold text-[#e6bc61] transition group-hover:border-[#e6bc61]">ফ</span>
             <span className="leading-none">
               <strong className="block text-[1rem] font-semibold text-white">ফেরদৌস সালেহীন</strong>
@@ -44,9 +48,17 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             {navItems.map(([label, href]) => (
-              <Link key={href} href={href} className="text-sm text-[#aaa69c] transition hover:text-[#e8bd64]">
+              <Link
+                key={href}
+                href={href}
+                aria-current={pathname === href ? "page" : undefined}
+                className={cn(
+                  "text-xs text-[#aaa69c] transition hover:text-[#e8bd64] xl:text-sm",
+                  pathname === href && "text-[#e8bd64]",
+                )}
+              >
                 {label}
               </Link>
             ))}
@@ -57,7 +69,7 @@ export function SiteHeader() {
               <Search className="size-4" />
             </button>
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <Link href="#order">বই অর্ডার</Link>
+              <Link href="/books#order">বই অর্ডার</Link>
             </Button>
             <button
               type="button"
@@ -76,12 +88,18 @@ export function SiteHeader() {
           <div className="overflow-hidden">
             <div className="grid gap-1 border-t border-white/8 px-4 py-4">
               {navItems.map(([label, href]) => (
-                <Link key={href} href={href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-base text-[#c9c5bb] hover:bg-white/5 hover:text-white">
+                <Link
+                  key={href}
+                  href={href}
+                  aria-current={pathname === href ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  className={cn("rounded-xl px-3 py-3 text-base text-[#c9c5bb] hover:bg-white/5 hover:text-white", pathname === href && "bg-[#d6a642]/10 text-[#e8bd64]")}
+                >
                   {label}
                 </Link>
               ))}
               <Button asChild className="mt-2 sm:hidden">
-                <Link href="#order" onClick={() => setOpen(false)}>বই অর্ডার</Link>
+                <Link href="/books#order" onClick={() => setOpen(false)}>বই অর্ডার</Link>
               </Button>
             </div>
           </div>

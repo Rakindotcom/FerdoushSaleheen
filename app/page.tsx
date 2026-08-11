@@ -4,11 +4,9 @@ import {
   ArrowDown,
   ArrowRight,
   BookOpen,
-  CalendarDays,
   Download,
   Headphones,
   LibraryBig,
-  MessageCircle,
   Mic2,
   Play,
   Quote,
@@ -19,16 +17,17 @@ import {
 import { AudioPlayer } from "@/components/audio-player";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 const exploreItems = [
-  { icon: BookOpen, number: "০১", title: "বই", description: "প্রকাশিত ও আগামীর বই—একটি সমৃদ্ধ পাঠভুবন।", href: "#book" },
-  { icon: Mic2, number: "০২", title: "পডকাস্ট", description: "বিশ্বাস, জীবন ও সময়ের প্রশ্ন নিয়ে গভীর আলাপ।", href: "#podcast" },
-  { icon: Headphones, number: "০৩", title: "অডিওবুক", description: "চলতে চলতে শুনুন নির্বাচিত অধ্যায় ও ভাবনা।", href: "#audiobook" },
-  { icon: LibraryBig, number: "০৪", title: "অনুধ্যান", description: "কুরআন, সালাত ও জীবনের আলোকে পাঠ ও প্রতিফলন।", href: "#reflections" },
-  { icon: Video, number: "০৫", title: "ভিডিও", description: "লেকচার, সাক্ষাৎকার ও সংক্ষিপ্ত স্মরণিকা।", href: "#videos" },
-  { icon: Download, number: "০৬", title: "রিসোর্স", description: "নির্বাচিত নোট, গাইড ও দাওয়াহ উপকরণ।", href: "#resources" },
+  { icon: BookOpen, number: "০১", title: "বই", description: "প্রকাশিত ও আগামীর বই—একটি সমৃদ্ধ পাঠভুবন।", href: "/books" },
+  { icon: Mic2, number: "০২", title: "পডকাস্ট", description: "বিশ্বাস, জীবন ও সময়ের প্রশ্ন নিয়ে গভীর আলাপ।", href: "/podcast" },
+  { icon: Headphones, number: "০৩", title: "অডিওবুক", description: "চলতে চলতে শুনুন নির্বাচিত অধ্যায় ও ভাবনা।", href: "/audiobooks" },
+  { icon: LibraryBig, number: "০৪", title: "অনুধ্যান", description: "কুরআন, সালাত ও জীবনের আলোকে পাঠ ও প্রতিফলন।", href: "/reflections" },
+  { icon: Video, number: "০৫", title: "ভিডিও", description: "লেকচার, সাক্ষাৎকার ও সংক্ষিপ্ত স্মরণিকা।", href: "/videos" },
+  { icon: Download, number: "০৬", title: "রিসোর্স", description: "নির্বাচিত নোট, গাইড ও দাওয়াহ উপকরণ।", href: "/resources" },
 ];
 
 const reflections = [
@@ -59,10 +58,10 @@ export default function HomePage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link href="#book">বইটি সম্পর্কে জানুন <ArrowRight className="size-4" /></Link>
+                <Link href="/books">বইটি সম্পর্কে জানুন <ArrowRight className="size-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#audiobook"><Play className="size-4 fill-current" /> শুনুন</Link>
+                <Link href="/audiobooks"><Play className="size-4 fill-current" /> শুনুন</Link>
               </Button>
             </div>
             <div className="mt-12 flex items-center gap-4 text-xs uppercase tracking-[0.18em] text-[#77746c]">
@@ -99,7 +98,7 @@ export default function HomePage() {
           <p className="max-w-2xl text-sm leading-6 text-[#99958c] md:border-l md:border-white/10 md:pl-8">
             কুরআনের বাণীকে দৈনন্দিন জীবনের বোধ ও অনুশীলনের সঙ্গে যুক্ত করার এক আন্তরিক প্রয়াস।
           </p>
-          <Link href="#about-detail" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">পরিচিতি পড়ুন <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></Link>
+          <Link href="/about" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">পরিচিতি পড়ুন <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></Link>
         </div>
       </section>
 
@@ -144,7 +143,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap gap-2 text-xs text-[#aaa69c]">
                 {["জীবন", "ইবাদত", "হেদায়াত", "পরকাল"].map((item) => <span key={item} className="rounded-full border border-white/10 px-3 py-1.5">{item}</span>)}
               </div>
-              <div id="order" className="mt-8 flex flex-wrap gap-3"><Button asChild><Link href="#contact">বইটি অর্ডার করুন <ArrowRight className="size-4" /></Link></Button><Button asChild variant="outline"><Link href="#audiobook"><Headphones className="size-4" /> অডিওবুক</Link></Button></div>
+              <div id="order" className="mt-8 flex flex-wrap gap-3"><Button asChild><Link href="/books#order">বইটি অর্ডার করুন <ArrowRight className="size-4" /></Link></Button><Button asChild variant="outline"><Link href="/audiobooks"><Headphones className="size-4" /> অডিওবুক</Link></Button></div>
             </div>
           </div>
         </ContainerScroll>
@@ -155,7 +154,7 @@ export default function HomePage() {
         <div className="page-shell relative">
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div><span className="eyebrow mb-5">কণ্ঠে দীর্ঘ আলাপ</span><h2 className="section-title">নির্বাচিত <span className="gold-text">পডকাস্ট</span></h2></div>
-            <Link href="#podcast" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">সব পর্ব দেখুন <ArrowRight className="size-4 transition group-hover:translate-x-1" /></Link>
+            <Link href="/podcast" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">সব পর্ব দেখুন <ArrowRight className="size-4 transition group-hover:translate-x-1" /></Link>
           </div>
           <article className="grid overflow-hidden rounded-3xl border border-white/10 bg-[#0d0d0c] lg:grid-cols-[1.1fr_.9fr]">
             <div className="relative min-h-[25rem] overflow-hidden lg:min-h-[34rem]">
@@ -167,7 +166,7 @@ export default function HomePage() {
               <div className="mb-6 flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.16em] text-[#8f8b82]"><span className="text-[#d6a642]">বিশেষ পর্ব</span><span className="size-1 rounded-full bg-[#5e5b55]" /><span>৪২ মিনিট</span></div>
               <h3 className="text-balance text-3xl font-medium leading-tight text-white md:text-5xl">ফাতিহা: যে সংলাপ প্রতিদিন আমাদের ভেতর বদলায়</h3>
               <p className="mt-5 text-base leading-7 text-[#969289]">সালাতে ফিরে আসা সাতটি আয়াত কীভাবে আমাদের কৃতজ্ঞতা, নির্ভরতা ও পথচলার মানচিত্র গড়ে দেয়—তা নিয়ে মন্থর, গভীর এক আলোচনা।</p>
-              <Button asChild variant="outline" className="mt-8 w-fit"><Link href="#podcast"><Play className="size-4 fill-current" /> পর্বটি শুনুন</Link></Button>
+              <Button asChild variant="outline" className="mt-8 w-fit"><Link href="/podcast"><Play className="size-4 fill-current" /> পর্বটি শুনুন</Link></Button>
             </div>
           </article>
         </div>
@@ -203,7 +202,7 @@ export default function HomePage() {
               <article key={item.title} className="group grid gap-5 py-8 md:grid-cols-[5rem_1fr_auto] md:items-center">
                 <span className="text-sm tabular-nums text-[#58554f]">০{index + 1}</span>
                 <div><span className="mb-2 block text-xs font-medium text-[#bd8e35]">{item.label}</span><h3 className="max-w-3xl text-balance text-2xl font-medium leading-tight text-[#e9e6df] transition group-hover:text-white md:text-3xl">{item.title}</h3></div>
-                <div className="flex items-center gap-5"><span className="text-xs text-[#77736b]">{item.read}</span><Link href="#reflections" aria-label={`${item.title} পড়ুন`} className="grid size-11 place-items-center rounded-full border border-white/10 transition group-hover:border-[#d6a642]/50 group-hover:text-[#d6a642]"><ArrowRight className="size-4" /></Link></div>
+                <div className="flex items-center gap-5"><span className="text-xs text-[#77736b]">{item.read}</span><Link href="/reflections" aria-label={`${item.title} পড়ুন`} className="grid size-11 place-items-center rounded-full border border-white/10 transition group-hover:border-[#d6a642]/50 group-hover:text-[#d6a642]"><ArrowRight className="size-4" /></Link></div>
               </article>
             ))}
           </div>
@@ -212,7 +211,7 @@ export default function HomePage() {
 
       <section id="videos" className="border-y border-white/[0.06] bg-[#090908] py-24 md:py-32">
         <div className="page-shell">
-          <div className="mb-12 flex items-end justify-between gap-6"><div><span className="eyebrow mb-5">দেখুন ও জানুন</span><h2 className="section-title">সাম্প্রতিক <span className="gold-text">ভিডিও</span></h2></div><Link href="#videos" className="hidden items-center gap-2 text-sm text-[#d6a642] sm:inline-flex">সব ভিডিও <ArrowRight className="size-4" /></Link></div>
+          <div className="mb-12 flex items-end justify-between gap-6"><div><span className="eyebrow mb-5">দেখুন ও জানুন</span><h2 className="section-title">সাম্প্রতিক <span className="gold-text">ভিডিও</span></h2></div><Link href="/videos" className="hidden items-center gap-2 text-sm text-[#d6a642] sm:inline-flex">সব ভিডিও <ArrowRight className="size-4" /></Link></div>
           <div className="grid gap-5 md:grid-cols-3">
             {["সুরা আল-ফাতিহা কেন জীবনের মানচিত্র", "সালাতে মনোযোগ ফিরে পাওয়ার তিনটি পথ", "কৃতজ্ঞতা: বিশ্বাস থেকে প্রতিদিনের অভ্যাস"].map((title, index) => (
               <article key={title} className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0e0e0d]">
@@ -241,7 +240,7 @@ export default function HomePage() {
             <Quote className="mb-6 size-10 text-[#d6a642]/45" />
             <blockquote className="text-balance text-3xl font-medium leading-[1.35] text-[#eeebe4] md:text-5xl">“বইয়ের পাতায় একটি ভাবনার শুরু—জীবনে তার অর্থ খুঁজে পাওয়াই আমাদের প্রকৃত যাত্রা।”</blockquote>
             <p className="mt-7 max-w-xl text-base leading-7 text-[#918d84]">এই প্ল্যাটফর্মের লক্ষ্য শুধু তথ্য দেওয়া নয়; বরং পাঠ, শ্রবণ ও আলোচনার মধ্য দিয়ে কুরআনের শিক্ষাকে জীবনের সঙ্গে যুক্ত করার একটি বিশ্বস্ত পরিসর তৈরি করা।</p>
-            <Button asChild variant="outline" className="mt-8"><Link href="#contact">আরও জানুন <ArrowRight className="size-4" /></Link></Button>
+            <Button asChild variant="outline" className="mt-8"><Link href="/about">আরও জানুন <ArrowRight className="size-4" /></Link></Button>
           </div>
         </div>
       </section>
@@ -249,7 +248,7 @@ export default function HomePage() {
       <section id="resources" className="border-y border-white/[0.06] bg-[#0c0b09] py-24">
         <div className="page-shell grid gap-10 md:grid-cols-[.85fr_1.15fr] md:items-center">
           <div><div className="mb-5 grid size-12 place-items-center rounded-xl border border-[#d6a642]/25 bg-[#d6a642]/10"><Sparkles className="size-5 text-[#d6a642]" /></div><h2 className="text-balance text-4xl font-medium leading-tight md:text-5xl">ফাতিহা অনুধ্যানের<br /><span className="gold-text">বিনামূল্যের সহায়ক</span></h2></div>
-          <div className="rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8"><span className="text-xs text-[#b48734]">PDF · ১৮ পৃষ্ঠা</span><h3 className="mt-3 text-2xl font-medium text-white">সাত আয়াতের রিফ্লেকশন জার্নাল</h3><p className="mt-3 text-sm leading-6 text-[#8f8b81]">প্রতিটি আয়াত নিয়ে থামুন, ভাবুন এবং নিজের উপলব্ধি লিখে রাখুন—ব্যক্তিগত পাঠচর্চা বা স্টাডি সার্কেলের জন্য।</p><Button asChild className="mt-6"><Link href="#resources"><Download className="size-4" /> ডাউনলোড করুন</Link></Button></div>
+          <div className="rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8"><span className="text-xs text-[#b48734]">PDF · ১৮ পৃষ্ঠা</span><h3 className="mt-3 text-2xl font-medium text-white">সাত আয়াতের রিফ্লেকশন জার্নাল</h3><p className="mt-3 text-sm leading-6 text-[#8f8b81]">প্রতিটি আয়াত নিয়ে থামুন, ভাবুন এবং নিজের উপলব্ধি লিখে রাখুন—ব্যক্তিগত পাঠচর্চা বা স্টাডি সার্কেলের জন্য।</p><Button asChild className="mt-6"><Link href="/resources"><Download className="size-4" /> রিসোর্স দেখুন</Link></Button></div>
         </div>
       </section>
 
@@ -263,16 +262,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-white/[0.07] bg-[#080807]">
-        <div className="page-shell py-14">
-          <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
-            <div><div className="mb-5 flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full border border-[#d6a642]/40 text-[#d6a642]">ফ</span><strong className="font-medium">ড. ফেরদৌস সালেহীন</strong></div><p className="max-w-sm text-sm leading-6 text-[#77736b]">বই, অনুধ্যান, পডকাস্ট, অডিওবুক ও দাওয়াহ উদ্যোগের অফিসিয়াল ডিজিটাল প্ল্যাটফর্ম।</p></div>
-            <div><h3 className="mb-4 text-xs uppercase tracking-[0.15em] text-[#b58a37]">এক্সপ্লোর</h3><div className="grid grid-cols-2 gap-3 text-sm text-[#87837a]">{["বই", "পডকাস্ট", "অডিওবুক", "অনুধ্যান", "ভিডিও", "রিসোর্স"].map((item) => <Link key={item} href="#top" className="hover:text-white">{item}</Link>)}</div></div>
-            <div><h3 className="mb-4 text-xs uppercase tracking-[0.15em] text-[#b58a37]">যোগাযোগ</h3><div className="space-y-3 text-sm text-[#87837a]"><Link href="#contact" className="flex items-center gap-2 hover:text-white"><MessageCircle className="size-4" /> সাধারণ যোগাযোগ</Link><Link href="#contact" className="flex items-center gap-2 hover:text-white"><CalendarDays className="size-4" /> বক্তব্যের আমন্ত্রণ</Link></div></div>
-          </div>
-          <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.07] pt-6 text-xs text-[#5f5c56] sm:flex-row sm:items-center sm:justify-between"><span>© ২০২৬ ড. ফেরদৌস সালেহীন। সর্বস্বত্ব সংরক্ষিত।</span><div className="flex gap-5"><Link href="#">গোপনীয়তা</Link><Link href="#">শর্তাবলি</Link></div></div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
