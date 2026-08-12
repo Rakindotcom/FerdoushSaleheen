@@ -76,7 +76,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild><Link href="/contact">যোগাযোগ করুন <ArrowRight className="size-4" /></Link></Button>
+              <Button asChild><a href={`mailto:${profile.email}`}>ইমেইল করুন <ArrowRight className="size-4" /></a></Button>
               <Button asChild variant="outline"><Link href="/books"><BookOpen className="size-4" /> লেখকের বই</Link></Button>
             </div>
           </div>
@@ -242,16 +242,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
-        <div className="page-shell grid gap-8 overflow-hidden rounded-[2rem] border border-[#d6a642]/20 bg-[#0d0c0a] p-7 md:grid-cols-[1fr_auto] md:items-center md:p-12">
-          <div>
-            <span className="eyebrow mb-5">Writing & intellectual platform</span>
-            <h2 className="text-balance text-4xl font-medium leading-tight text-white md:text-5xl">কর্পোরেট ও একাডেমিক অভিজ্ঞতা থেকে <span className="gold-text">বইয়ের জগতে</span></h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#918d84]">তাঁর গবেষণা, শিক্ষা ও নেতৃত্বের অভিজ্ঞতার পাশাপাশি এই প্ল্যাটফর্মে সুরা আল-ফাতিহা, জীবন, ইবাদত, হেদায়াত এবং পরকাল নিয়ে বই ও অনুধ্যানের কাজ সংরক্ষিত ও সম্প্রসারিত হবে।</p>
-          </div>
-          <Button asChild size="lg"><Link href="/books">বইটি দেখুন <ArrowRight className="size-4" /></Link></Button>
-        </div>
-      </section>
     </InnerPage>
   );
 }

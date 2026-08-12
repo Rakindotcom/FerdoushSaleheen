@@ -1,21 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import { bookPurchaseUrl } from "@/lib/podcast-data";
 const navItems = [
+  ["হোমপেজ", "/"],
   ["পরিচিতি", "/about"],
   ["বই", "/books"],
   ["পডকাস্ট", "/podcast"],
-  ["অডিওবুক", "/audiobooks"],
-  ["অনুধ্যান", "/reflections"],
-  ["ভিডিও", "/videos"],
-  ["আয়োজন", "/events"],
-  ["যোগাযোগ", "/contact"],
 ];
 
 export function SiteHeader() {
@@ -65,11 +62,8 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-2">
-            <button aria-label="অনুসন্ধান" className="hidden size-11 place-items-center rounded-full text-[#b9b5aa] transition hover:bg-white/5 hover:text-white sm:grid">
-              <Search className="size-4" />
-            </button>
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <Link href="/books#order">বই অর্ডার</Link>
+              <Link href={bookPurchaseUrl} target="_blank" rel="noreferrer">বই কিনুন</Link>
             </Button>
             <button
               type="button"
@@ -99,7 +93,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <Button asChild className="mt-2 sm:hidden">
-                <Link href="/books#order" onClick={() => setOpen(false)}>বই অর্ডার</Link>
+                <Link href={bookPurchaseUrl} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>বই কিনুন</Link>
               </Button>
             </div>
           </div>
