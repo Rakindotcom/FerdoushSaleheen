@@ -4,17 +4,21 @@ import { ArrowLeft } from "lucide-react";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import type { SiteLocale } from "@/lib/locale";
+import { localizePath } from "@/lib/locale";
 
 export function InnerPage({
   eyebrow,
   title,
   description,
   children,
+  locale = "bn",
 }: {
   eyebrow: string;
   title: ReactNode;
   description: string;
   children: ReactNode;
+  locale?: SiteLocale;
 }) {
   return (
     <main className="min-h-screen bg-[#050505] text-[#f7f3e8]">
@@ -24,7 +28,7 @@ export function InnerPage({
         <div className="paper-noise pointer-events-none absolute inset-0 opacity-[0.025]" />
         <div className="pointer-events-none absolute -right-28 top-8 size-[30rem] rounded-full bg-[#d6a642]/[0.07] blur-[120px]" />
         <div className="page-shell relative">
-          <Link href="/" className="mb-10 inline-flex items-center gap-2 text-xs text-[#77736b] transition hover:text-[#d6a642]"><ArrowLeft className="size-3.5" /> হোমে ফিরুন</Link>
+          <Link href={localizePath("/", locale)} className="mb-10 inline-flex items-center gap-2 text-xs text-[#77736b] transition hover:text-[#d6a642]"><ArrowLeft className="size-3.5" /> {locale === "en" ? "Back to home" : "হোমে ফিরুন"}</Link>
           <span className="eyebrow mb-6">{eyebrow}</span>
           <h1 className="max-w-5xl text-balance text-[clamp(3.4rem,8vw,7.4rem)] font-medium leading-[.88] tracking-[-.05em] text-white">{title}</h1>
           <p className="mt-7 max-w-2xl text-balance text-base leading-8 text-[#99958c] md:text-lg">{description}</p>

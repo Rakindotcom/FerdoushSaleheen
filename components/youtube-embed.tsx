@@ -9,6 +9,7 @@ type YouTubeEmbedProps = {
   title: string;
   className?: string;
   loading?: "eager" | "lazy";
+  locale?: "bn" | "en";
 };
 
 export function YouTubeEmbed({
@@ -16,6 +17,7 @@ export function YouTubeEmbed({
   title,
   className = "",
   loading = "lazy",
+  locale = "bn",
 }: YouTubeEmbedProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +43,7 @@ export function YouTubeEmbed({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          aria-label={`${title}—পপ-আপে চালু করুন`}
+          aria-label={locale === "en" ? `Play ${title} in a dialog` : `${title}: পপ-আপে চালু করুন`}
           aria-haspopup="dialog"
           className="group absolute inset-0 size-full bg-cover bg-center text-white"
           style={{ backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), url(https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg)` }}
@@ -50,7 +52,7 @@ export function YouTubeEmbed({
           <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#d6a642] text-black shadow-[0_10px_40px_rgba(0,0,0,.45)] transition duration-300 group-hover:scale-110 sm:size-20">
             <Play className="ml-1 size-6 fill-current sm:size-8" />
           </span>
-          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/65 px-5 py-2.5 text-sm font-semibold backdrop-blur-md transition group-hover:border-[#d6a642]/60 group-hover:text-[#efc976]">ভিডিও দেখুন</span>
+          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/65 px-5 py-2.5 text-sm font-semibold backdrop-blur-md transition group-hover:border-[#d6a642]/60 group-hover:text-[#efc976]">{locale === "en" ? "Watch video" : "ভিডিও দেখুন"}</span>
         </button>
       {isOpen && createPortal(
         <div
@@ -64,7 +66,7 @@ export function YouTubeEmbed({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              aria-label="ভিডিও বন্ধ করুন"
+              aria-label={locale === "en" ? "Close video" : "ভিডিও বন্ধ করুন"}
               className="absolute -top-14 right-0 grid size-11 place-items-center rounded-full border border-white/20 bg-black/70 text-white transition hover:border-[#d6a642]/60 hover:text-[#d6a642]"
             >
               <X className="size-5" />

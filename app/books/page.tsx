@@ -10,11 +10,12 @@ import { bookPurchaseUrl } from "@/lib/podcast-data";
 export const metadata: Metadata = {
   title: "বই | ড. ফেরদৌস সালেহীন",
   description: "ড. ফেরদৌস সালেহীনের প্রকাশিত ও আসন্ন বইয়ের সংগ্রহ।",
+  alternates: { canonical: "/books", languages: { "bn-BD": "/books", en: "/en/books" } },
 };
 
 export default function BooksPage() {
   return (
-    <InnerPage eyebrow="প্রকাশনা" title={<>বইয়ের পাতায় <span className="gold-text">ভাবনার শুরু</span></>} description="প্রতিটি বই একটি স্বতন্ত্র পাঠযাত্রা—আর তার সঙ্গে যুক্ত অডিও, অনুধ্যান, ভিডিও ও আলোচনার আরও বিস্তৃত জগৎ।">
+    <InnerPage eyebrow="প্রকাশনা" title={<>বইয়ের পাতায় <span className="gold-text">ভাবনার শুরু</span></>} description="প্রতিটি বই একটি স্বতন্ত্র পাঠযাত্রা। তার সঙ্গে যুক্ত অডিও, অনুধ্যান, ভিডিও ও আলোচনার আরও বিস্তৃত জগৎ।">
       <section className="py-24 md:py-32">
         <div className="page-shell">
           <SectionHeading eyebrow="প্রকাশিত বই" description="ড. ফেরদৌস সালেহীনের প্রকাশিত বই।">সুরা আল-ফাতিহা:<br /><span className="gold-text">সাতটি আয়াত</span></SectionHeading>
@@ -25,7 +26,7 @@ export default function BooksPage() {
             <div className="flex flex-col justify-center border-t border-white/10 p-7 md:p-12 lg:border-l lg:border-t-0">
               <span className="text-xs font-semibold tracking-[0.13em] text-[#d6a642]">তাফসির ও জীবনের প্রতিফলন</span>
               <h2 className="mt-5 text-balance text-4xl font-medium leading-tight text-white md:text-6xl">যা আমার দৃষ্টিভঙ্গি এবং জীবন বদলে দিয়েছে</h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[#99958c]">প্রতিদিনের সালাতে ফিরে আসা সাতটি আয়াত—কৃতজ্ঞতা, রবের পরিচয়, জবাবদিহি, ইবাদত ও হেদায়াতের আলোকে জীবনকে নতুন করে দেখার একটি সহজপাঠ্য অনুধ্যান।</p>
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#99958c]">প্রতিদিনের সালাতে ফিরে আসা সাতটি আয়াত। কৃতজ্ঞতা, রবের পরিচয়, জবাবদিহি, ইবাদত ও হেদায়াতের আলোকে জীবনকে নতুন করে দেখার একটি সহজপাঠ্য অনুধ্যান।</p>
               <div className="mt-7 flex flex-wrap gap-2">{["জীবন", "ইবাদত", "আল-ফাতিহা", "হেদায়াত", "পরকাল"].map((tag) => <span key={tag} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-[#aaa69c]">{tag}</span>)}</div>
               <dl className="mt-8 grid grid-cols-2 gap-5 border-y border-white/[0.08] py-6 text-sm sm:grid-cols-3"><div><dt className="text-[#68655f]">ভাষা</dt><dd className="mt-1 text-white">বাংলা</dd></div><div><dt className="text-[#68655f]">ফরম্যাট</dt><dd className="mt-1 text-white">হার্ডকভার</dd></div><div><dt className="text-[#68655f]">অবস্থা</dt><dd className="mt-1 text-[#e2b75b]">প্রকাশিত</dd></div></dl>
               <div id="order" className="mt-8"><Button asChild size="lg"><Link href={bookPurchaseUrl} target="_blank" rel="noreferrer"><ShoppingBag className="size-4" /> রকমারি থেকে কিনুন</Link></Button></div>

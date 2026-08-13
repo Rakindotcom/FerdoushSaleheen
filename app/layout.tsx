@@ -4,6 +4,8 @@ import "@fontsource/anek-bangla/400.css";
 import "@fontsource/anek-bangla/500.css";
 import "@fontsource/anek-bangla/600.css";
 import "@fontsource/anek-bangla/700.css";
+
+import { LanguagePreferenceGate } from "@/components/language-preference-gate";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -15,7 +17,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "ড. ফেরদৌস সালেহীন | Official Digital Platform",
+    default: "ড. ফেরদৌস সালেহীন | অফিসিয়াল ডিজিটাল প্ল্যাটফর্ম",
     template: "%s",
   },
   description:
@@ -37,8 +39,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="bn" className={montserrat.variable}>
-      <body>{children}</body>
+    <html lang="bn" className={montserrat.variable} data-scroll-behavior="smooth">
+      <body>
+        {children}
+        <LanguagePreferenceGate />
+      </body>
     </html>
   );
 }

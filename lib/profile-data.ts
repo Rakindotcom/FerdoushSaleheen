@@ -41,7 +41,8 @@ export const profile = {
     { value: "২০+", label: "বছরের সম্মিলিত অভিজ্ঞতা", english: "Years in industry & academia" },
     { value: "১৫+", label: "বছরের কর্পোরেট নেতৃত্ব", english: "Years in corporate leadership" },
     { value: "১০+", label: "বছরের শিক্ষা ও গবেষণা", english: "Years in teaching & research" },
-    { value: "৩০+", label: "গবেষণা প্রকাশনা", english: "Research papers" },
+    { value: "৩৪+", label: "প্রকাশনা ও বুক চ্যাপ্টার", english: "Publications & book chapters" },
+    { value: "১০০+", label: "কর্পোরেট প্রশিক্ষণ", english: "Corporate training programs" },
   ],
   skills: ["Research and Development (R&D)", "Research Skills", "Design Research"],
   certifications: [
