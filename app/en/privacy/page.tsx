@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 import { InnerPage } from "@/components/inner-page";
 import { LegalContent } from "@/components/legal-content";
 
-export const metadata: Metadata = { title: "Privacy Policy", alternates: { canonical: "/en/privacy", languages: { "bn-BD": "/privacy", en: "/en/privacy" } } };
+export const metadata: Metadata = createPageMetadata({
+  locale: "en",
+  title: "Privacy Policy",
+  description: "How information and third-party services are handled on the official website of Dr. Ferdoush Saleheen.",
+  banglaPath: "/privacy",
+  englishPath: "/en/privacy",
+  noIndex: true,
+});
 
 export default function EnglishPrivacyPage() {
   return <InnerPage locale="en" eyebrow="Legal information" title={<>Privacy <span className="gold-text">Policy</span></>} description="A concise explanation of how information is handled on this website."><LegalContent sections={[

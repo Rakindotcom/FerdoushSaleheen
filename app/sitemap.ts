@@ -1,12 +1,34 @@
 import type { MetadataRoute } from "next";
 
+import { getSiteUrl, languageAlternates } from "@/lib/seo";
+
+const routes = [
+  { bn: "/", en: "/en", changeFrequency: "weekly", priority: 1 },
+  { bn: "/about", en: "/en/about", changeFrequency: "monthly", priority: 0.9 },
+  { bn: "/books", en: "/en/books", changeFrequency: "monthly", priority: 0.9 },
+  { bn: "/audiobooks", en: "/en/audiobooks", changeFrequency: "monthly", priority: 0.8 },
+  { bn: "/podcast", en: "/en/podcast", changeFrequency: "weekly", priority: 0.8 },
+] as const;
+
+const contentLastModified = new Date("2026-08-14T00:00:00.000Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const banglaRoutes = ["", "/about", "/books", "/podcast", "/audiobooks", "/privacy", "/terms"];
-  const routes = [...banglaRoutes, ...banglaRoutes.map((route) => `/en${route}`)];
-  return routes.map((route, index) => ({
-    url: `${baseUrl}${route}`,
-    changeFrequency: index === 0 ? "weekly" : "monthly",
-    priority: index === 0 ? 1 : 0.8,
-  }));
+  const baseUrl = getSiteUrl();
+
+  return routes.flatMap(({ bn, en, changeFrequency, priority }) => {
+    const languages = Object.fromEntries(
+      Object.entries(languageAlternates(bn, en)).map(([language, path]) => [
+        language,
+        new URL(path, baseUrl).toString(),
+      ]),
+    );
+
+    return [bn, en].map((path) => ({
+      url: new URL(path, baseUrl).toString(),
+      lastModified: contentLastModified,
+      changeFrequency,
+      priority,
+      alternates: { languages },
+    }));
+  });
 }

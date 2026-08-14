@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 import { InnerPage } from "@/components/inner-page";
 import { LegalContent } from "@/components/legal-content";
 
-export const metadata: Metadata = { title: "Terms of Use", alternates: { canonical: "/en/terms", languages: { "bn-BD": "/terms", en: "/en/terms" } } };
+export const metadata: Metadata = createPageMetadata({
+  locale: "en",
+  title: "Terms of Use",
+  description: "Terms for using information, images, and third-party content published on the official website of Dr. Ferdoush Saleheen.",
+  banglaPath: "/terms",
+  englishPath: "/en/terms",
+  noIndex: true,
+});
 
 export default function EnglishTermsPage() {
   return <InnerPage locale="en" eyebrow="Legal information" title={<>Terms of <span className="gold-text">Use</span></>} description="Terms governing the use of information and content published on this website."><LegalContent sections={[

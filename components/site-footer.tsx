@@ -41,7 +41,7 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.07] pt-6 text-xs text-[#5f5c56] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.07] pt-6 text-xs text-[#918d84] sm:flex-row sm:items-center sm:justify-between">
           <span>{locale === "en" ? "© 2026 Dr. Ferdoush Saleheen. All rights reserved." : "© ২০২৬ ড. ফেরদৌস সালেহীন। সর্বস্বত্ব সংরক্ষিত।"}</span>
           <div className="flex gap-5"><Link href={localizePath("/privacy", locale)}>{locale === "en" ? "Privacy" : "গোপনীয়তা"}</Link><Link href={localizePath("/terms", locale)}>{locale === "en" ? "Terms" : "শর্তাবলি"}</Link></div>
         </div>

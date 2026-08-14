@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,20 +20,19 @@ import {
 } from "lucide-react";
 
 import { InnerPage, SectionHeading } from "@/components/inner-page";
+import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { educationBn, experiencesBn, profileBn } from "@/lib/profile-data-bn";
 
-export const metadata: Metadata = {
-  title: "পরিচিতি | ড. ফেরদৌস সালেহীন, PhD, FCILT",
-  description:
-    "ড. ফেরদৌস সালেহীনের ২০+ বছরের সাপ্লাই চেইন, লজিস্টিকস, একাডেমিক নেতৃত্ব, গবেষণা, প্রকাশনা ও কর্পোরেট অভিজ্ঞতার পূর্ণ পরিচিতি।",
-  openGraph: {
-    title: "ড. ফেরদৌস সালেহীন, পিএইচডি, এফসিআইএলটি",
-    description: "মেরিটাইম লজিস্টিকস ও সাপ্লাই চেইন ম্যানেজমেন্ট বিভাগের প্রধান, শিক্ষাবিদ, গবেষক, লেখক ও শিল্পনেতা।",
-    images: ["/fsPhoto.png"],
-  },
-  alternates: { canonical: "/about", languages: { "bn-BD": "/about", en: "/en/about" } },
-};
+export const metadata: Metadata = createPageMetadata({
+  locale: "bn",
+  title: "Supply Chain & Logistics Expert | PhD, FCILT",
+  siteNameFirst: true,
+  description: "ড. ফেরদৌস সালেহীনের ২০+ বছরের সাপ্লাই চেইন, লজিস্টিকস, একাডেমিক নেতৃত্ব, গবেষণা, প্রকাশনা ও কর্পোরেট অভিজ্ঞতার পূর্ণ পরিচিতি।",
+  banglaPath: "/about",
+  englishPath: "/en/about",
+  image: "/fsPhoto.png",
+});
 
 export default function AboutPage() {
   return (
@@ -41,6 +41,10 @@ export default function AboutPage() {
       title={<>ড. ফেরদৌস <span className="gold-text">সালেহীন</span></>}
       description="পিএইচডি, এফসিআইএলটি | শিল্পনেতা, শিক্ষাবিদ, গবেষক, পাঠ্যক্রম নির্মাতা, কর্পোরেট প্রশিক্ষক ও লেখক।"
     >
+      <StructuredData data={[
+        createProfilePageJsonLd({ path: "/about", name: "ড. ফেরদৌস সালেহীন | পেশাগত পরিচিতি", language: "bn-BD" }),
+        createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "পরিচিতি", path: "/about" }]),
+      ]} />
       <section className="py-20 md:py-28">
         <div className="page-shell grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-[#efefed]">

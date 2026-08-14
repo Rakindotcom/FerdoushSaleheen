@@ -53,7 +53,7 @@ export function SiteHeader() {
         )}
       >
         <div className="flex h-[4.5rem] items-center justify-between px-3 md:px-5">
-          <Link href={homeHref} className="group flex items-center gap-3" aria-label={locale === "en" ? "Home page" : "হোম পেইজ"}>
+          <Link href={homeHref} className="group flex items-center gap-3" aria-label={locale === "en" ? "Ferdoush Saleheen home page" : "ফেরদৌস সালেহীন হোমপেজ"}>
             <span className="grid size-10 place-items-center rounded-full border border-[#d6a642]/40 bg-[#d6a642]/10 text-lg font-semibold text-[#e6bc61] transition group-hover:border-[#e6bc61]">ফ</span>
             <span className="leading-none">
               <strong className="block text-[1rem] font-semibold text-white">{locale === "en" ? "Ferdoush Saleheen" : "ফেরদৌস সালেহীন"}</strong>

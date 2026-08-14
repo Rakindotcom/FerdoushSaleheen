@@ -16,21 +16,25 @@ export function LanguagePreferenceGate() {
   const [state, setState] = useState<GateState>("checking");
 
   useEffect(() => {
-    const preference = readLanguagePreference();
+    const frame = window.requestAnimationFrame(() => {
+      const preference = readLanguagePreference();
 
-    if (!preference) {
-      setState("prompt");
-      return;
-    }
+      if (!preference) {
+        setState("prompt");
+        return;
+      }
 
-    const currentLocale: SiteLocale = isEnglishPath(pathname) ? "en" : "bn";
-    if (preference !== currentLocale) {
-      setState("redirecting");
-      router.replace(alternateLocalePath(pathname));
-      return;
-    }
+      const currentLocale: SiteLocale = isEnglishPath(pathname) ? "en" : "bn";
+      if (preference !== currentLocale) {
+        setState("redirecting");
+        router.replace(alternateLocalePath(pathname));
+        return;
+      }
 
-    setState("ready");
+      setState("ready");
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname, router]);
 
   useEffect(() => {

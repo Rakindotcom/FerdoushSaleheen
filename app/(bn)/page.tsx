@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, BookOpen, ExternalLink, GraduationCap, Headphones, Linkedin, Mic2, Play, UserRound } from "lucide-react";
@@ -23,9 +24,14 @@ const featuredOrganizations = experiences.flatMap(({ organization, website, logo
   logo ? [{ organization, website, ...logo }] : [],
 ).slice(0, 8);
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/", languages: { "bn-BD": "/", en: "/en" } },
-};
+export const metadata: Metadata = createPageMetadata({
+  locale: "bn",
+  title: "Supply Chain & Logistics Expert, Author",
+  siteNameFirst: true,
+  description: "ড. ফেরদৌস সালেহীনের পেশাগত পরিচিতি, বই, বাংলা অডিওবুক, পডকাস্ট, গবেষণা ও কুরআনিক অনুধ্যানের অফিসিয়াল ডিজিটাল প্ল্যাটফর্ম।",
+  banglaPath: "/",
+  englishPath: "/en",
+});
 
 
 export default function HomePage() {
@@ -40,11 +46,12 @@ export default function HomePage() {
 
         <div className="page-shell relative z-10 grid min-h-[52rem] items-center gap-12 pb-14 pt-32 lg:min-h-screen lg:grid-cols-[minmax(0,.9fr)_minmax(28rem,1.1fr)] lg:gap-14 lg:pb-10 lg:pt-28">
           <div className="relative z-10 max-w-3xl">
-            <div className="eyebrow mb-7">লেখক · গবেষক · শিক্ষাবিদ</div>
+            <div className="eyebrow mb-7">সাপ্লাই চেইন ও লজিস্টিকস · শিক্ষা · গবেষণা</div>
             <h1 className="text-balance text-[clamp(3.5rem,7vw,6.4rem)] font-medium leading-[0.88] tracking-[-0.05em] text-white">
-              বই থেকে<br />
-              <span className="gold-text">জীবনের পথে</span>
+              ড. ফেরদৌস<br />
+              <span className="gold-text">সালেহীন</span>
             </h1>
+            <p className="mt-6 text-balance text-[clamp(1.7rem,3.6vw,3rem)] font-medium leading-tight tracking-[-0.035em] text-white">বই থেকে জীবনের পথে</p>
             <p className="mt-8 max-w-xl text-balance text-lg leading-8 text-[#aaa69c] md:text-xl">
               ড. ফেরদৌস সালেহীনের পেশাগত পরিচিতি, প্রকাশিত বই এবং নির্বাচিত পডকাস্টের অফিসিয়াল ডিজিটাল ঠিকানা।
             </p>
@@ -147,7 +154,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10">
-            <p className="mb-5 text-center text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#68655f]">নির্বাচিত প্রতিষ্ঠান ও সংস্থা</p>
+            <p className="mb-5 text-center text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#918d84]">নির্বাচিত প্রতিষ্ঠান ও সংস্থা</p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
               {featuredOrganizations.map(({ organization, website, src, onDark }) => (
                 <a
@@ -177,7 +184,7 @@ export default function HomePage() {
             {exploreItems.map(({ icon: Icon, number, title, description, href }) => (
               <Link key={title} href={href} className="group relative min-h-60 overflow-hidden bg-[#0c0c0b] p-7 transition duration-300 hover:bg-[#12100c] md:p-8">
                 <Icon className="absolute -bottom-8 -right-5 size-32 rotate-[-9deg] text-[#d6a642] opacity-[0.035] transition duration-500 group-hover:rotate-0 group-hover:opacity-[0.09]" />
-                <div className="flex items-start justify-between"><span className="text-[0.65rem] tracking-[0.2em] text-[#68655f]">{number}</span><ArrowRight className="size-4 text-[#77736a] transition group-hover:translate-x-1 group-hover:text-[#d6a642]" /></div>
+                <div className="flex items-start justify-between"><span className="text-[0.65rem] tracking-[0.2em] text-[#918d84]">{number}</span><ArrowRight className="size-4 text-[#77736a] transition group-hover:translate-x-1 group-hover:text-[#d6a642]" /></div>
                 <div className="mt-14"><div className="mb-4 grid size-11 place-items-center rounded-xl border border-[#d6a642]/20 bg-[#d6a642]/[0.06]"><Icon className="size-5 text-[#d6a642]" /></div><h3 className="text-2xl font-medium text-white">{title}</h3><p className="mt-2 max-w-xs text-sm leading-6 text-[#88847b]">{description}</p></div>
               </Link>
             ))}
@@ -238,7 +245,7 @@ export default function HomePage() {
                 <Linkedin className="absolute -bottom-10 -right-8 size-44 text-[#0a66c2] opacity-[0.035] transition duration-500 group-hover:-rotate-3 group-hover:opacity-[0.09]" aria-hidden="true" />
                 <div className="relative flex items-center justify-between gap-4">
                   <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-[#d6a642]"><Linkedin className="size-4 text-[#4c9fe8]" />{post.category}</span>
-                  <span className="text-xs text-[#5f5c56]">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="text-xs text-[#918d84]">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="relative mt-10 max-w-xl text-balance text-2xl font-medium leading-tight text-white md:text-3xl">{post.title}</h3>
                 <p className="relative mt-5 max-w-xl text-sm leading-7 text-[#969289]">{post.summary}</p>
@@ -257,7 +264,7 @@ export default function HomePage() {
             <Link href="/podcast" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">সব পর্ব দেখুন <ArrowRight className="size-4 transition group-hover:translate-x-1" /></Link>
           </div>
           <article className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d0d0c] p-2 sm:p-3">
-            <YouTubeEmbed videoId={podcastEpisodes[0].videoId} title="ড. ফেরদৌস সালেহীনের নির্বাচিত পডকাস্ট" className="rounded-[1.15rem]" />
+            <YouTubeEmbed videoId={podcastEpisodes[0].videoId} title={podcastEpisodes[0].titleBn} className="rounded-[1.15rem]" />
             <div className="flex flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
               <span className="text-xs tracking-[0.15em] text-[#d6a642]">নির্বাচিত পডকাস্ট</span>
               <span className="inline-flex items-center gap-2 text-sm text-[#969289]"><Play className="size-4 fill-current text-[#d6a642]" /> ভিডিওতে চাপুন · পপ-আপে দেখুন</span>

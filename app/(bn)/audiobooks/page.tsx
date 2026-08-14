@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
+import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Headphones, RotateCcw } from "lucide-react";
 
 import { AudiobookPlayer } from "@/components/audiobook-player";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
+import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { surahAlFatihahAudiobook } from "@/lib/audiobook-data";
 
-export const metadata: Metadata = {
-  title: "অডিওবুক | ড. ফেরদৌস সালেহীন",
-  description:
-    "ড. ফেরদৌস সালেহীনের সুরা আল-ফাতিহা: সাতটি আয়াত অডিওবুকটি সরাসরি শুনুন।",
-  openGraph: {
-    title: "সুরা আল-ফাতিহা: সাতটি আয়াত | অডিওবুক",
-    description: "সুরা আল-ফাতিহার সাতটি আয়াত নিয়ে পূর্ণাঙ্গ বাংলা অডিওবুক।",
-    images: [surahAlFatihahAudiobook.cover],
+export const metadata: Metadata = createPageMetadata({
+  locale: "bn",
+  title: "সুরা আল-ফাতিহা: সাতটি আয়াত অডিওবুক",
+  description: "ড. ফেরদৌস সালেহীনের ‘সুরা আল-ফাতিহা: সাতটি আয়াত’ পূর্ণাঙ্গ বাংলা অডিওবুকটি অনলাইনে বিনামূল্যে শুনুন।",
+  banglaPath: "/audiobooks",
+  englishPath: "/en/audiobooks",
+  image: "/bookImage.png",
+});
+
+const audiobookJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Audiobook",
+  "@id": `${absoluteUrl("/audiobooks")}#audiobook`,
+  name: "সুরা আল-ফাতিহা: সাতটি আয়াত",
+  alternateName: "Surah Al-Fatihah: The Seven Verses — Bangla Audiobook",
+  description: surahAlFatihahAudiobook.description,
+  url: absoluteUrl("/audiobooks"),
+  image: absoluteUrl(surahAlFatihahAudiobook.cover),
+  inLanguage: "bn-BD",
+  author: { "@id": `${absoluteUrl()}#person` },
+  readBy: { "@id": `${absoluteUrl()}#person` },
+  isAccessibleForFree: true,
+  associatedMedia: {
+    "@type": "AudioObject",
+    contentUrl: absoluteUrl(surahAlFatihahAudiobook.tracks[0].src),
+    encodingFormat: "audio/mpeg",
+    inLanguage: "bn-BD",
   },
-  alternates: { canonical: "/audiobooks", languages: { "bn-BD": "/audiobooks", en: "/en/audiobooks" } },
 };
 
 export default function AudiobooksPage() {
@@ -25,10 +45,11 @@ export default function AudiobooksPage() {
 
   return (
     <InnerPage
-      eyebrow="শুনুন"
-      title={<>কানে শুনুন।<br /><span className="gold-text">হৃদয়ে ধারণ করুন।</span></>}
-      description="বইয়ের ভাবনা, ব্যাখ্যা ও আত্মঅনুসন্ধান এবার শুনুন আপনার সুবিধামতো সময়ে, যাত্রাপথে, অবসরে কিংবা নীরব মনোযোগে।"
+      eyebrow="কানে শুনুন · হৃদয়ে ধারণ করুন"
+      title={<>সুরা আল-ফাতিহা:<br /><span className="gold-text">সাতটি আয়াত অডিওবুক</span></>}
+      description="ড. ফেরদৌস সালেহীনের বইয়ের ভাবনা, ব্যাখ্যা ও আত্মঅনুসন্ধান এবার শুনুন আপনার সুবিধামতো সময়ে, যাত্রাপথে, অবসরে কিংবা নীরব মনোযোগে।"
     >
+      <StructuredData data={[audiobookJsonLd, createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "অডিওবুক", path: "/audiobooks" }])]} />
       <section className="py-24 md:py-32">
         <div className="page-shell">
           <SectionHeading
