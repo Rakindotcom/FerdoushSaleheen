@@ -23,6 +23,14 @@ export const podcastEpisodes = [
     titleBn: "ব্যবসা বাঁচাতে যে ১০টি সাপ্লাই চেইন প্রশ্ন জানতেই হবে",
     titleEn: "Ten supply-chain questions every business should answer",
   },
+  {
+    number: 4,
+    no: "০৪",
+    videoId: "GiHzlVvUN-E",
+    href: "https://youtu.be/GiHzlVvUN-E?si=CjKLLkGKAZ_S5egS",
+    titleBn: "সূরা ফাতিহা প্রতিদিন ১৭ বার পড়ি—কিন্তু আল্লাহর কাছে আসলে কী চাইছি?",
+    titleEn: "We recite Surah Al-Fatihah 17 times a day—but what are we actually asking Allah for?",
+  },
 ] as const;
 
 export const bookPurchaseUrl =

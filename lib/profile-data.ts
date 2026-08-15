@@ -25,6 +25,7 @@ export const profile = {
   contactLocation: "Dubai, UAE",
   email: "ferdoushsaleheen@gmail.com",
   linkedIn: "https://www.linkedin.com/in/ferdoushsaleheen",
+  facebook: "https://www.facebook.com/ferdoush.saleheen.supplychainclub",
   summary: [
     "Dr. Ferdoush Saleheen brings over 20 years of combined industry and academic experience in Supply Chain Management (SCM) and Logistics across Asia and the Gulf.",
     "He has led successful SCM transformations at major organizations including Meena Bazar Retail Chain, Butterfly Marketing Ltd. (LG Bangladesh Operations), Akij Food and Beverage Ltd., and Partex Star Group - some of the largest and most respected companies in Bangladesh.",

@@ -38,6 +38,7 @@ const personJsonLd = {
   description: "Academic, supply chain and logistics leader, researcher, corporate trainer, editor, and author with more than two decades of experience across industry and higher education.",
   sameAs: [
     "https://www.linkedin.com/in/ferdoushsaleheen",
+    "https://www.facebook.com/ferdoush.saleheen.supplychainclub",
     "https://www.sma.ac.ae/faculty-profiles/dr-ferdoush-saleheen",
     "https://scholar.google.com/citations?hl=en&user=vAUNGskAAAAJ",
     "https://www.researchgate.net/profile/Ferdoush-Saleheen",

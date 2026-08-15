@@ -11,6 +11,7 @@ import {
   Building2,
   CheckCircle2,
   ExternalLink,
+  Facebook,
   GraduationCap,
   Linkedin,
   Mail,
@@ -75,7 +76,10 @@ export default function AboutPage() {
               <a href={profileBn.linkedIn} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] transition hover:border-[#d6a642]/35 hover:text-white">
                 <Linkedin className="size-4 text-[#d6a642]" /><span>LinkedIn পরিচিতি</span><ExternalLink className="ml-auto size-3.5" />
               </a>
-              <div className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] sm:col-span-2">
+              <a href={profileBn.facebook} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] transition hover:border-[#d6a642]/35 hover:text-white">
+                <Facebook className="size-4 text-[#d6a642]" /><span>Facebook পরিচিতি</span><ExternalLink className="ml-auto size-3.5" />
+              </a>
+              <div className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]">
                 <MapPin className="size-4 text-[#d6a642]" />{profileBn.contactLocation}
               </div>
             </div>

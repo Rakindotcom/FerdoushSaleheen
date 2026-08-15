@@ -73,7 +73,7 @@ export function YouTubeEmbed({
             </button>
             <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&loop=1&playlist=${videoId}&iv_load_policy=3&playsinline=1`}
                 title={title}
                 loading={loading}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

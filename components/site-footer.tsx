@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Mail } from "lucide-react";
+import { Facebook, Linkedin, Mail } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { profile } from "@/lib/profile-data";
 import { isEnglishPath, localizePath } from "@/lib/locale";
 
 const navigation = {
-  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["পডকাস্ট", "/podcast"], ["অডিওবুক", "/audiobooks"]],
-  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["Podcast", "/podcast"], ["Audiobook", "/audiobooks"]],
+  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["পডকাস্ট", "/podcast"], ["ভিডিও", "/videos"], ["অডিওবুক", "/audiobooks"]],
+  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["Podcast", "/podcast"], ["Videos", "/videos"], ["Audiobook", "/audiobooks"]],
 } as const;
 
 export function SiteFooter() {
@@ -38,12 +38,19 @@ export function SiteFooter() {
             <div className="space-y-3 text-sm text-[#87837a]">
               <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-white"><Mail className="size-4" /> {locale === "en" ? "Email" : "ইমেইল"}</a>
               <a href={profile.linkedIn} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white"><Linkedin className="size-4" /> LinkedIn</a>
+              <a href={profile.facebook} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white"><Facebook className="size-4" /> Facebook</a>
             </div>
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.07] pt-6 text-xs text-[#918d84] sm:flex-row sm:items-center sm:justify-between">
           <span>{locale === "en" ? "© 2026 Dr. Ferdoush Saleheen. All rights reserved." : "© ২০২৬ ড. ফেরদৌস সালেহীন। সর্বস্বত্ব সংরক্ষিত।"}</span>
           <div className="flex gap-5"><Link href={localizePath("/privacy", locale)}>{locale === "en" ? "Privacy" : "গোপনীয়তা"}</Link><Link href={localizePath("/terms", locale)}>{locale === "en" ? "Terms" : "শর্তাবলি"}</Link></div>
+        </div>
+        <div className="mt-5 text-center text-xs text-[#918d84]">
+          Developed by{" "}
+          <a href="https://framecipher.info" target="_blank" rel="noreferrer" className="hover:text-white">
+            FrameCipher
+          </a>
         </div>
       </div>
     </footer>

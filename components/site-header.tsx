@@ -17,6 +17,7 @@ const navigation = {
     ["পরিচিতি", "/about"],
     ["বই", "/books"],
     ["পডকাস্ট", "/podcast"],
+    ["ভিডিও", "/videos"],
     ["অডিওবুক", "/audiobooks"],
   ],
   en: [
@@ -24,6 +25,7 @@ const navigation = {
     ["About", "/about"],
     ["Books", "/books"],
     ["Podcast", "/podcast"],
+    ["Videos", "/videos"],
     ["Audiobook", "/audiobooks"],
   ],
 } as const;
