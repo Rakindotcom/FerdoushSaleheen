@@ -15,7 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "ড. ফেরদৌস সালেহীনের ‘সুরা আল-ফাতিহা: সাতটি আয়াত’ বইয়ের বিষয়বস্তু, পাঠভাবনা, অডিওবুক ও ক্রয়ের তথ্য জানুন।",
   banglaPath: "/books",
   englishPath: "/en/books",
-  image: "/bookImage.png",
+  image: "/bookImage.webp",
 });
 
 const bookJsonLd = {
@@ -26,7 +26,7 @@ const bookJsonLd = {
   alternateName: "Surah Al-Fatihah: The Seven Verses",
   description: "সুরা আল-ফাতিহার সাতটি আয়াতকে কৃতজ্ঞতা, ইবাদত, হেদায়াত, জবাবদিহি ও জীবনের আলোকে অনুধ্যানের একটি বাংলা বই।",
   url: absoluteUrl("/books"),
-  image: absoluteUrl("/bookImage.png"),
+  image: absoluteUrl("/bookImage.webp"),
   inLanguage: "bn-BD",
   author: { "@id": `${absoluteUrl()}#person` },
   genre: ["Islamic literature", "Qur'anic reflection"],
@@ -42,7 +42,7 @@ export default function BooksPage() {
           <SectionHeading eyebrow="প্রকাশিত বই" description="ড. ফেরদৌস সালেহীনের প্রকাশিত বই।">সুরা আল-ফাতিহা:<br /><span className="gold-text">সাতটি আয়াত</span></SectionHeading>
           <article className="grid overflow-hidden rounded-[2rem] border border-[#d6a642]/20 bg-[#0d0c0a] lg:grid-cols-[.85fr_1.15fr]">
             <div className="relative min-h-[34rem] bg-[radial-gradient(circle_at_center,rgba(214,166,66,.14),transparent_60%)]">
-              <Image src="/bookImage.png" alt="সুরা আল-ফাতিহা: সাতটি আয়াত বইয়ের প্রচ্ছদ" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-contain p-10 drop-shadow-[0_30px_45px_rgba(0,0,0,.7)] md:p-16" priority />
+              <Image src="/bookImage.webp" alt="সুরা আল-ফাতিহা: সাতটি আয়াত বইয়ের প্রচ্ছদ" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-contain p-10 drop-shadow-[0_30px_45px_rgba(0,0,0,.7)] md:p-16" priority />
             </div>
             <div className="flex flex-col justify-center border-t border-white/10 p-7 md:p-12 lg:border-l lg:border-t-0">
               <span className="text-xs font-semibold tracking-[0.13em] text-[#d6a642]">তাফসির ও জীবনের প্রতিফলন</span>

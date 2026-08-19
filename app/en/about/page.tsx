@@ -16,7 +16,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "Explore the professional profile of Dr. Ferdoush Saleheen, a supply chain leader, academic, researcher, corporate trainer, editor, and author.",
   banglaPath: "/about",
   englishPath: "/en/about",
-  image: "/fsPhoto.png",
+  image: "/fsPhoto.webp",
 });
 
 export default function EnglishAboutPage() {
@@ -27,7 +27,7 @@ export default function EnglishAboutPage() {
         createBreadcrumbJsonLd([{ name: "Home", path: "/en" }, { name: "About", path: "/en/about" }]),
       ]} />
       <section className="py-20 md:py-28"><div className="page-shell grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-[#efefed]"><Image src="/fsPhoto.png" alt="Ferdoush Saleheen, PhD, FCILT" fill sizes="(max-width: 1024px) 90vw, 420px" className="object-cover object-top" priority /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/50 to-transparent p-7 pt-28"><span className="text-sm text-[#e7c36f]">PhD · FCILT</span><p className="mt-1 text-xs text-white/65">Supply Chain Management &amp; Logistics</p></div></div>
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-[#efefed]"><Image src="/fsPhoto.webp" alt="Ferdoush Saleheen, PhD, FCILT" fill sizes="(max-width: 1024px) 90vw, 420px" className="object-cover object-top" priority /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/50 to-transparent p-7 pt-28"><span className="text-sm text-[#e7c36f]">PhD · FCILT</span><p className="mt-1 text-xs text-white/65">Supply Chain Management &amp; Logistics</p></div></div>
         <div><span className="eyebrow mb-5">Professional profile</span><h2 className="text-balance text-4xl font-medium text-white md:text-6xl">{profile.name}</h2><p className="mt-5 text-xl text-[#d8b35c] md:text-2xl">{profile.currentTitle}</p><p className="mt-2 text-sm text-[#88847b]">{profile.country}</p><div className="mt-8 grid gap-3 sm:grid-cols-2"><a href={`mailto:${profile.email}`} className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]"><Mail className="size-4 text-[#d6a642]" />{profile.email}</a><a href={profile.linkedIn} target="_blank" rel="noreferrer" className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]"><Linkedin className="size-4 text-[#d6a642]" />LinkedIn profile<ExternalLink className="ml-auto size-3.5" /></a><a href={profile.facebook} target="_blank" rel="noreferrer" className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]"><Facebook className="size-4 text-[#d6a642]" />Facebook profile<ExternalLink className="ml-auto size-3.5" /></a><div className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]"><MapPin className="size-4 text-[#d6a642]" />{profile.contactLocation}</div></div><div className="mt-8 flex gap-3"><Button asChild><a href={`mailto:${profile.email}`}>Send email <ArrowRight className="size-4" /></a></Button><Button asChild variant="outline"><Link href="/en/books"><BookOpen className="size-4" /> Books</Link></Button></div></div>
       </div></section>
 

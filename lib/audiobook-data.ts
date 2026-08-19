@@ -14,7 +14,7 @@ export type Audiobook = {
 export const surahAlFatihahAudiobook: Audiobook = {
   title: "সুরা আল-ফাতিহা: সাতটি আয়াত",
   author: "ড. ফেরদৌস সালেহীন",
-  cover: "/bookImage.png",
+  cover: "/bookImage.webp",
   description:
     "সুরা আল-ফাতিহার সাতটি আয়াতকে জীবন, ইবাদত, হেদায়াত ও আত্মঅনুসন্ধানের আলোকে শোনার একটি পূর্ণাঙ্গ অডিও অভিজ্ঞতা।",
   tracks: [

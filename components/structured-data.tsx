@@ -34,7 +34,7 @@ const personJsonLd = {
   honorificSuffix: "PhD, FCILT",
   alternateName: "ড. ফেরদৌস সালেহীন",
   url: absoluteUrl(),
-  image: absoluteUrl("/fsPhoto.png"),
+  image: absoluteUrl("/fsPhoto.webp"),
   description: "Academic, supply chain and logistics leader, researcher, corporate trainer, editor, and author with more than two decades of experience across industry and higher education.",
   sameAs: [
     "https://www.linkedin.com/in/ferdoushsaleheen",

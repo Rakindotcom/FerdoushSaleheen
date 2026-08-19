@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteName.en, url: "/en/about" }],
   creator: siteName.en,
   publisher: siteName.en,
+  icons: { icon: [{ url: "/icon.webp", type: "image/webp" }] },
   category: "Education, books, podcasts, and Islamic reflection",
   alternates: {
     canonical: "/en",

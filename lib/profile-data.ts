@@ -64,7 +64,7 @@ export const experiences: ProfileExperience[] = [
     organization: "Sharjah Maritime Academy",
     organizationDuration: "1 year 6 months",
     website: "https://www.sma.ac.ae/",
-    logo: { src: "/company-logos/sharjah-maritime-academy.png", onDark: true },
+    logo: { src: "/company-logos/sharjah-maritime-academy.webp", onDark: true },
     roles: [
       { title: "Head of Maritime Logistics & SCM Department", period: "April 2026 - Present", duration: "5 months", location: "Sharjah Emirate, United Arab Emirates" },
       { title: "Academic Program Chair, MS Maritime Operations Management", period: "April 2026 - Present", duration: "5 months", location: "Khor Fakkan" },
@@ -82,7 +82,7 @@ export const experiences: ProfileExperience[] = [
   {
     organization: "IEOM Society International",
     website: "https://ieomsociety.org/",
-    logo: { src: "/company-logos/ieom-society.png" },
+    logo: { src: "/company-logos/ieom-society.webp" },
     roles: [{ title: "Reviewer - Technical Conference & Journal Papers", period: "July 2025 - Present", duration: "1 year 2 months", location: "Michigan, United States" }],
     descriptions: ["Reviews technical papers and provides expert feedback for journals and conferences."],
   },
@@ -101,7 +101,7 @@ export const experiences: ProfileExperience[] = [
   {
     organization: "International Journal of Supply Chain Management (IJSCM)",
     website: "https://ojs.excelingtech.co.uk/index.php/IJSCM",
-    logo: { src: "/company-logos/ijscm.jpg" },
+    logo: { src: "/company-logos/ijscm.webp" },
     roles: [{ title: "Editorial Board Member", period: "January 2023 - Present", duration: "3 years 8 months", location: "United Kingdom" }],
   },
   {
@@ -119,14 +119,14 @@ export const experiences: ProfileExperience[] = [
   {
     organization: "BRAC University",
     website: "https://www.bracu.ac.bd/",
-    logo: { src: "/company-logos/brac-university.png" },
+    logo: { src: "/company-logos/brac-university.webp" },
     roles: [{ title: "Assistant Professor of SCM (Adjunct)", period: "August 2014 - August 2022", duration: "8 years 1 month", location: "Dhaka, Bangladesh" }],
     descriptions: ["Taught in the MS in Procurement and Supply Management program."],
   },
   {
     organization: "Partex Star Group (Danish)",
     website: "https://www.partexstar.com/",
-    logo: { src: "/company-logos/partex-star-group.png", onDark: true },
+    logo: { src: "/company-logos/partex-star-group.webp", onDark: true },
     roles: [{ title: "Chief of Supply Chain (FMCG Business)", period: "January 2022 - July 2022", duration: "7 months", location: "Dhaka, Bangladesh" }],
     descriptions: ["Held responsibility for Partex Star Group Complex 2 across Food, Beverage, Tissue Paper, Condensed Milk, and Steel businesses, reporting to the Managing Director. Danish is the largest food and beverage company in Bangladesh."],
   },
@@ -140,7 +140,7 @@ export const experiences: ProfileExperience[] = [
   {
     organization: "Kazi Farms Limited",
     website: "https://www.kazifarms.com/",
-    logo: { src: "/company-logos/kazi-farms.gif" },
+    logo: { src: "/company-logos/kazi-farms.webp" },
     roles: [{ title: "Head of Supply Chain Management (Poultry & Feed Business)", period: "November 2018 - December 2019", duration: "1 year 2 months", location: "Dhaka, Bangladesh" }],
     descriptions: ["Led supply chain management for Bangladesh's largest integrated poultry and feed mill company."],
   },
@@ -161,7 +161,7 @@ export const experiences: ProfileExperience[] = [
   {
     organization: "Gemcon Group",
     website: "https://gemcongroup.com/",
-    logo: { src: "/company-logos/gemcon-group.png" },
+    logo: { src: "/company-logos/gemcon-group.webp" },
     roles: [{ title: "General Manager Supply Chain (Retail Business - Meena Bazar)", period: "February 2012 - March 2015", duration: "3 years 2 months", location: "Dhaka, Bangladesh" }],
     descriptions: ["Led supply chain for Meena Bazar, the largest retail chain in Bangladesh."],
   },

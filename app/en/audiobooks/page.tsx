@@ -16,7 +16,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "Listen online to the complete Bangla audiobook of Surah Al-Fatihah: The Seven Verses by Dr. Ferdoush Saleheen.",
   banglaPath: "/audiobooks",
   englishPath: "/en/audiobooks",
-  image: "/bookImage.png",
+  image: "/bookImage.webp",
 });
 
 const audiobookJsonLd = {

@@ -16,7 +16,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "ড. ফেরদৌস সালেহীনের ‘সুরা আল-ফাতিহা: সাতটি আয়াত’ পূর্ণাঙ্গ বাংলা অডিওবুকটি অনলাইনে বিনামূল্যে শুনুন।",
   banglaPath: "/audiobooks",
   englishPath: "/en/audiobooks",
-  image: "/bookImage.png",
+  image: "/bookImage.webp",
 });
 
 const audiobookJsonLd = {

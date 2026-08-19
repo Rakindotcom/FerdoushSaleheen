@@ -32,7 +32,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "ড. ফেরদৌস সালেহীনের ২০+ বছরের সাপ্লাই চেইন, লজিস্টিকস, একাডেমিক নেতৃত্ব, গবেষণা, প্রকাশনা ও কর্পোরেট অভিজ্ঞতার পূর্ণ পরিচিতি।",
   banglaPath: "/about",
   englishPath: "/en/about",
-  image: "/fsPhoto.png",
+  image: "/fsPhoto.webp",
 });
 
 export default function AboutPage() {
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <div className="page-shell grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-[#efefed]">
             <Image
-              src="/fsPhoto.png"
+              src="/fsPhoto.webp"
               alt="ড. ফেরদৌস সালেহীন, পিএইচডি, এফসিআইএলটি"
               fill
               sizes="(max-width: 1024px) 90vw, 420px"

@@ -71,7 +71,7 @@ export default function HomePage() {
           <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#121311] shadow-[0_32px_90px_rgba(0,0,0,.48)] lg:translate-y-4">
             <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(5,5,5,.2)_0%,transparent_34%),linear-gradient(0deg,rgba(5,5,5,.48)_0%,transparent_32%)]" />
             <Image
-              src="/FSwithTheBook.png"
+              src="/FSwithTheBook.webp"
               alt="হাতে সুরা আল-ফাতিহা বই নিয়ে ড. ফেরদৌস সালেহীন"
               fill
               priority
@@ -90,7 +90,7 @@ export default function HomePage() {
         <div className="page-shell grid gap-8 py-8 md:grid-cols-[auto_1fr_auto] md:items-center">
           <div className="flex items-center gap-4">
             <div className="relative size-14 overflow-hidden rounded-full border border-[#d6a642]/30">
-              <Image src="/fsPhoto.png" alt="ড. ফেরদৌস সালেহীনের প্রতিকৃতি" fill sizes="56px" className="object-cover" />
+              <Image src="/fsPhoto.webp" alt="ড. ফেরদৌস সালেহীনের প্রতিকৃতি" fill sizes="56px" className="object-cover" />
             </div>
             <div><strong className="block text-sm font-medium">ড. ফেরদৌস সালেহীন</strong><span className="text-xs text-[#858178]">পিএইচডি · এফসিআইএলটি</span></div>
           </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
           <div className="grid overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[#0c0c0b] lg:grid-cols-[.82fr_1.18fr]">
             <div className="relative min-h-[34rem] overflow-hidden bg-[#ecebea]">
               <Image
-                src="/fsPhoto.png"
+                src="/fsPhoto.webp"
                 alt="ড. ফেরদৌস সালেহীন, পিএইচডি, এফসিআইএলটি"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
@@ -205,7 +205,7 @@ export default function HomePage() {
         >
           <div className="grid h-full md:grid-cols-[.9fr_1.1fr]">
             <div className="relative min-h-56 overflow-hidden bg-[radial-gradient(circle_at_center,rgba(214,166,66,.14),transparent_60%)]">
-              <Image src="/bookImage.png" alt="সুরা আল-ফাতিহা: সাতটি আয়াত বইয়ের প্রচ্ছদ" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-contain p-8 drop-shadow-[0_28px_35px_rgba(0,0,0,.65)] md:p-12" />
+              <Image src="/bookImage.webp" alt="সুরা আল-ফাতিহা: সাতটি আয়াত বইয়ের প্রচ্ছদ" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-contain p-8 drop-shadow-[0_28px_35px_rgba(0,0,0,.65)] md:p-12" />
             </div>
             <div className="flex flex-col justify-center border-t border-white/10 p-7 md:border-l md:border-t-0 md:p-12">
               <span className="text-xs font-semibold tracking-[0.12em] text-[#d6a642]">তাফসির ও জীবনের প্রতিফলন</span>

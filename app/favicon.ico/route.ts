@@ -1,3 +1,3 @@
 export function GET(request: Request) {
-  return Response.redirect(new URL("/icon.png", request.url), 307);
+  return Response.redirect(new URL("/icon.webp", request.url), 307);
 }

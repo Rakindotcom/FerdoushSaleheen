@@ -46,7 +46,7 @@ export function YouTubeEmbed({
           aria-label={locale === "en" ? `Play ${title} in a dialog` : `${title}: পপ-আপে চালু করুন`}
           aria-haspopup="dialog"
           className="group absolute inset-0 size-full bg-cover bg-center text-white"
-          style={{ backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), url(https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg)` }}
+          style={{ backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), url(https://i.ytimg.com/vi_webp/${videoId}/maxresdefault.webp)` }}
         >
           <span className="absolute inset-0 bg-black/5 transition duration-300 group-hover:bg-black/15" />
           <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#d6a642] text-black shadow-[0_10px_40px_rgba(0,0,0,.45)] transition duration-300 group-hover:scale-110 sm:size-20">
