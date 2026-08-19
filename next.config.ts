@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   // running dev server from overwriting production manifests and static chunks.
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   images: {
+    // Assets are pre-compressed WebPs; serve them directly because the Netlify
+    // Next.js image optimizer rejects the deployed WebP sources with HTTP 400.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
   },
 };
