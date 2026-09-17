@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
-import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Headphones, RotateCcw } from "lucide-react";
 
-import { AudiobookPlayer } from "@/components/audiobook-player";
+import { AudiobookModalLauncher } from "@/components/audiobook-modal-launcher";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
@@ -59,39 +58,31 @@ export default function AudiobooksPage() {
             সুরা আল-ফাতিহা:<br /><span className="gold-text">সাতটি আয়াত</span>
           </SectionHeading>
 
-          <div className="grid gap-8 lg:grid-cols-[.75fr_1.25fr] lg:items-start">
-            <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d0c0a]">
-              <div className="relative aspect-[4/5] bg-[radial-gradient(circle_at_center,rgba(214,166,66,.14),transparent_65%)]">
-                <Image
-                  src={audiobook.cover}
-                  alt={`${audiobook.title} অডিওবুকের প্রচ্ছদ`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 36vw"
-                  className="object-contain p-8 drop-shadow-[0_25px_45px_rgba(0,0,0,.7)] sm:p-12"
-                  priority
-                />
-              </div>
-              <div className="border-t border-white/[0.08] p-6 sm:p-8">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.13em] text-[#d6a642]">
-                  <Headphones className="size-4" /> বিনামূল্যে শুনুন
-                </span>
-                <h2 className="mt-4 text-2xl font-medium text-white">{audiobook.title}</h2>
-                <p className="mt-2 text-sm text-[#8e8a81]">{audiobook.author}</p>
-                <p className="mt-5 text-sm leading-7 text-[#99958c]">{audiobook.description}</p>
-                <Button asChild variant="outline" className="mt-6">
-                  <Link href="/books"><BookOpen className="size-4" /> বইটি দেখুন</Link>
-                </Button>
-              </div>
-            </article>
-
-            <div>
-              <AudiobookPlayer tracks={audiobook.tracks} />
-              <div className="mt-5 flex items-start gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm leading-6 text-[#8e8a81]">
+          <article className="mx-auto grid max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d0c0a] shadow-[0_30px_90px_-55px_rgba(214,166,66,.55)] md:grid-cols-[.8fr_1.2fr]">
+            <AudiobookModalLauncher
+              cover={audiobook.cover}
+              coverAlt={`${audiobook.title} অডিওবুকের প্রচ্ছদ`}
+              title={audiobook.title}
+              author={audiobook.author}
+              tracks={audiobook.tracks}
+              priority
+            />
+            <div className="flex flex-col justify-center border-t border-white/[0.08] p-6 sm:p-10 md:border-l md:border-t-0 lg:p-12">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.13em] text-[#d6a642]">
+                <Headphones className="size-4" /> বিনামূল্যে শুনুন
+              </span>
+              <h2 className="mt-4 text-3xl font-medium text-white sm:text-4xl">{audiobook.title}</h2>
+              <p className="mt-2 text-sm text-[#8e8a81]">{audiobook.author}</p>
+              <p className="mt-5 text-sm leading-7 text-[#99958c]">{audiobook.description}</p>
+              <Button asChild variant="outline" className="mt-6">
+                <Link href="/books"><BookOpen className="size-4" /> বইটি দেখুন</Link>
+              </Button>
+              <div className="mt-6 flex items-start gap-3 border-t border-white/[0.08] pt-6 text-sm leading-6 text-[#8e8a81]">
                 <RotateCcw className="mt-1 size-4 shrink-0 text-[#d6a642]" aria-hidden="true" />
                 <p>আপনি যেখানে শোনা থামাবেন, এই ব্রাউজার পরেরবার সেখান থেকেই অডিওটি চালানোর জন্য অবস্থানটি মনে রাখবে।</p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
     </InnerPage>

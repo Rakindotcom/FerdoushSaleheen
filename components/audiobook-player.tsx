@@ -2,8 +2,10 @@
 
 import {
   AlertCircle,
+  Check,
   Pause,
   Play,
+  Share2,
   SkipBack,
   SkipForward,
   Volume2,
@@ -29,7 +31,14 @@ function formatTime(value: number) {
     : `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
 
-export function AudiobookPlayer({ tracks, locale = "bn" }: { tracks: AudiobookTrack[]; locale?: "bn" | "en" }) {
+type AudiobookPlayerProps = {
+  tracks: AudiobookTrack[];
+  locale?: "bn" | "en";
+  onShare?: () => void;
+  isShared?: boolean;
+};
+
+export function AudiobookPlayer({ tracks, locale = "bn", onShare, isShared = false }: AudiobookPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const lastSavedSecond = useRef(-1);
   const [trackIndex, setTrackIndex] = useState(0);
@@ -55,6 +64,8 @@ export function AudiobookPlayer({ tracks, locale = "bn" }: { tracks: AudiobookTr
     next: "Next track",
     volume: "Volume",
     speed: "Speed",
+    share: "Share",
+    shared: "Link copied",
   } : {
     playError: "অডিওটি চালু করা যায়নি। আবার চেষ্টা করুন।",
     nextError: "পরবর্তী অংশটি চালু করা যায়নি। আবার চেষ্টা করুন।",
@@ -69,6 +80,8 @@ export function AudiobookPlayer({ tracks, locale = "bn" }: { tracks: AudiobookTr
     next: "পরবর্তী ট্র্যাক",
     volume: "ভলিউম",
     speed: "গতি",
+    share: "শেয়ার করুন",
+    shared: "লিংক কপি হয়েছে",
   };
 
   useEffect(() => {
@@ -190,11 +203,24 @@ export function AudiobookPlayer({ tracks, locale = "bn" }: { tracks: AudiobookTr
         }}
       />
 
-      <div className="border-b border-white/[0.08] px-6 py-6 sm:px-8">
-        <span className="text-xs font-semibold tracking-[0.13em] text-[#d6a642]">
-          {copy.nowPlaying} · {copy.track} {trackIndex + 1}/{tracks.length}
-        </span>
-        <h2 className="mt-2 text-2xl font-medium text-white sm:text-3xl">{track.title}</h2>
+      <div className="flex items-start justify-between gap-4 border-b border-white/[0.08] px-6 py-6 sm:px-8">
+        <div>
+          <span className="text-xs font-semibold tracking-[0.13em] text-[#d6a642]">
+            {copy.nowPlaying} · {copy.track} {trackIndex + 1}/{tracks.length}
+          </span>
+          <h2 className="mt-2 text-2xl font-medium text-white sm:text-3xl">{track.title}</h2>
+        </div>
+        {onShare ? (
+          <button
+            type="button"
+            onClick={onShare}
+            aria-label={isShared ? copy.shared : copy.share}
+            className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3.5 text-xs font-semibold text-[#b8b3aa] transition hover:border-[#d6a642]/50 hover:text-white sm:px-4"
+          >
+            {isShared ? <Check className="size-4 text-[#efc66a]" aria-hidden="true" /> : <Share2 className="size-4" aria-hidden="true" />}
+            <span className="hidden sm:inline">{isShared ? copy.shared : copy.share}</span>
+          </button>
+        ) : null}
       </div>
 
       <div className="space-y-7 p-6 sm:p-8">
