@@ -20,6 +20,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import { AboutHero } from "@/components/heroes/about-hero";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
@@ -38,70 +39,14 @@ export const metadata: Metadata = createPageMetadata({
 export default function AboutPage() {
   return (
     <InnerPage
-      eyebrow="শিক্ষাবিদ · সাপ্লাই চেইন নেতা · লেখক"
-      title={<>ড. ফেরদৌস <span className="gold-text">সালেহীন</span></>}
-      description="পিএইচডি, এফসিআইএলটি | শিল্পনেতা, শিক্ষাবিদ, গবেষক, পাঠ্যক্রম নির্মাতা, কর্পোরেট প্রশিক্ষক ও লেখক।"
+      locale="bn"
+      hero={<AboutHero locale="bn" />}
     >
       <StructuredData data={[
         createProfilePageJsonLd({ path: "/about", name: "ড. ফেরদৌস সালেহীন | পেশাগত পরিচিতি", language: "bn-BD" }),
         createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "পরিচিতি", path: "/about" }]),
       ]} />
-      <section className="py-20 md:py-28">
-        <div className="page-shell grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-center">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-[#efefed]">
-            <Image
-              src="/fsPhoto.webp"
-              alt="ড. ফেরদৌস সালেহীন, পিএইচডি, এফসিআইএলটি"
-              fill
-              sizes="(max-width: 1024px) 90vw, 420px"
-              className="object-cover object-top"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/50 to-transparent p-7 pt-28">
-              <span className="text-sm text-[#e7c36f]">পিএইচডি · এফসিআইএলটি</span>
-              <p className="mt-1 text-xs text-white/65">সাপ্লাই চেইন ম্যানেজমেন্ট ও লজিস্টিকস</p>
-            </div>
-          </div>
 
-          <div>
-            <span className="eyebrow mb-5">পেশাগত পরিচিতি</span>
-            <h2 className="text-balance text-4xl font-medium leading-[1.05] text-white md:text-6xl">{profileBn.name}</h2>
-            <p className="mt-5 text-xl leading-snug text-[#d8b35c] md:text-2xl">{profileBn.currentTitle}</p>
-            <p className="mt-2 text-sm text-[#88847b]">{profileBn.country}</p>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <a href={`mailto:${profileBn.email}`} className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] transition hover:border-[#d6a642]/35 hover:text-white">
-                <Mail className="size-4 text-[#d6a642]" /><span className="min-w-0 truncate">{profileBn.email}</span>
-              </a>
-              <a href={profileBn.linkedIn} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] transition hover:border-[#d6a642]/35 hover:text-white">
-                <Linkedin className="size-4 text-[#d6a642]" /><span>LinkedIn পরিচিতি</span><ExternalLink className="ml-auto size-3.5" />
-              </a>
-              <a href={profileBn.facebook} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c] transition hover:border-[#d6a642]/35 hover:text-white">
-                <Facebook className="size-4 text-[#d6a642]" /><span>Facebook পরিচিতি</span><ExternalLink className="ml-auto size-3.5" />
-              </a>
-              <div className="flex min-h-14 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#0d0d0c] px-4 text-sm text-[#aaa69c]">
-                <MapPin className="size-4 text-[#d6a642]" />{profileBn.contactLocation}
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild><a href={`mailto:${profileBn.email}`}>ইমেইল করুন <ArrowRight className="size-4" /></a></Button>
-              <Button asChild variant="outline"><Link href="/books"><BookOpen className="size-4" /> লেখকের বই</Link></Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/[0.07] bg-[#0a0a09]">
-        <div className="page-shell grid grid-cols-2 gap-px bg-white/[0.07] sm:grid-cols-3 lg:grid-cols-5">
-          {profileBn.stats.map((stat) => (
-            <div key={stat.label} className="bg-[#0a0a09] px-5 py-8 text-center md:px-7 md:py-10">
-              <strong className="gold-text block text-4xl font-semibold md:text-5xl">{stat.value}</strong>
-              <span className="mt-3 block text-sm text-[#c0bcb2]">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <section className="py-24 md:py-32">
         <div className="page-shell">

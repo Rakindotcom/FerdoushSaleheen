@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 import { Play } from "lucide-react";
 
+import { PodcastHero } from "@/components/heroes/podcast-hero";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
 import { YouTubeEmbed } from "@/components/youtube-embed";
@@ -18,9 +19,13 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function PodcastPage() {
   return (
-    <InnerPage eyebrow="শুনুন · থামুন · আবার ভাবুন" title={<>ড. ফেরদৌস সালেহীন <span className="gold-text">পডকাস্ট</span></>} description="বিশ্বাস, জীবন, কুরআনিক অনুধ্যান, সাপ্লাই চেইন ও সময়ের গুরুত্বপূর্ণ প্রশ্ন নিয়ে সুসংগঠিত দীর্ঘ আলাপের আর্কাইভ।">
+    <InnerPage
+      locale="bn"
+      hero={<PodcastHero locale="bn" />}
+    >
       <StructuredData data={createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "পডকাস্ট", path: "/podcast" }])} />
-      <section className="py-24 md:py-32"><div className="page-shell">
+      <section id="featured-podcast" className="py-24 md:py-32"><div className="page-shell">
+
         <SectionHeading eyebrow="নির্বাচিত পর্ব" description="ড. ফেরদৌস সালেহীনের নির্বাচিত পূর্ণাঙ্গ আলোচনা সরাসরি YouTube থেকে দেখুন ও শুনুন।">সাম্প্রতিক <span className="gold-text">আলাপ</span></SectionHeading>
         <article className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d0d0c] p-2 sm:p-3">
           <YouTubeEmbed videoId={podcastEpisodes[0].videoId} title={podcastEpisodes[0].titleBn} loading="eager" className="rounded-[1.15rem]" />

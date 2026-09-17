@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink, Play } from "lucide-react";
 
+import { VideosHero } from "@/components/heroes/videos-hero";
 import { FacebookVideoEmbed } from "@/components/facebook-video-embed";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
@@ -19,12 +20,12 @@ export const metadata: Metadata = createPageMetadata({
 export default function VideosPage() {
   return (
     <InnerPage
-      eyebrow="দেখুন · ভাবুন · প্রয়োগ করুন"
-      title={<>নির্বাচিত <span className="gold-text">ভিডিও</span></>}
-      description="বিশ্বাস, জীবন, কুরআনিক অনুধ্যান, নেতৃত্ব ও ব্যবসা বিষয়ে ড. ফেরদৌস সালেহীনের সংক্ষিপ্ত ভিডিও এবং রিলের সংগ্রহ।"
+      locale="bn"
+      hero={<VideosHero locale="bn" />}
     >
       <StructuredData data={createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "ভিডিও", path: "/videos" }])} />
-      <section className="py-24 md:py-32">
+      <section id="video-grid" className="py-24 md:py-32">
+
         <div className="page-shell">
           <SectionHeading
             eyebrow="Facebook ভিডিও"

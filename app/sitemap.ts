@@ -6,12 +6,13 @@ const routes = [
   { bn: "/", en: "/en", changeFrequency: "weekly", priority: 1 },
   { bn: "/about", en: "/en/about", changeFrequency: "monthly", priority: 0.9 },
   { bn: "/books", en: "/en/books", changeFrequency: "monthly", priority: 0.9 },
+  { bn: "/news", en: "/en/news", changeFrequency: "weekly", priority: 0.9 },
   { bn: "/audiobooks", en: "/en/audiobooks", changeFrequency: "monthly", priority: 0.8 },
   { bn: "/podcast", en: "/en/podcast", changeFrequency: "weekly", priority: 0.8 },
   { bn: "/videos", en: "/en/videos", changeFrequency: "weekly", priority: 0.8 },
 ] as const;
 
-const contentLastModified = new Date("2026-08-15T00:00:00.000Z");
+const contentLastModified = new Date("2026-09-18T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getSiteUrl();

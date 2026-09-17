@@ -1,31 +1,47 @@
 import type { Metadata } from "next";
-import { absoluteUrl, createPageMetadata } from "@/lib/seo";
-import Image from "next/image";
-import Link from "next/link";
-import { Headphones, ShoppingBag } from "lucide-react";
 
-import { InnerPage, SectionHeading } from "@/components/inner-page";
+import { BooksHero } from "@/components/heroes/books-hero";
+import { InnerPage } from "@/components/inner-page";
+import { PublicationsCatalog } from "@/components/publications-catalog";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
-import { Button } from "@/components/ui/button";
 import { bookPurchaseUrl } from "@/lib/podcast-data";
+import { sustainableSupplyChainBook } from "@/lib/publication-data";
+import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   locale: "en",
   title: "Books and Publications",
-  description: "Explore Surah Al-Fatihah: The Seven Verses by Dr. Ferdoush Saleheen, including its themes, Bangla audiobook, and purchase information.",
+  description: "Explore Dr. Ferdoush Saleheen’s academic supply-chain publication and his separate work of Dawah and Qur’anic reflection.",
   banglaPath: "/books",
   englishPath: "/en/books",
-  image: "/bookImage.webp",
+  image: sustainableSupplyChainBook.cover,
 });
 
-const bookJsonLd = {
+const supplyChainBookJsonLd = {
   "@context": "https://schema.org",
   "@type": "Book",
-  "@id": `${absoluteUrl("/books")}#book`,
-  name: "সুরা আল-ফাতিহা: সাতটি আয়াত",
-  alternateName: "Surah Al-Fatihah: The Seven Verses",
-  description: "সুরা আল-ফাতিহার সাতটি আয়াতকে কৃতজ্ঞতা, ইবাদত, হেদায়াত, জবাবদিহি ও জীবনের আলোকে অনুধ্যানের একটি বাংলা বই।",
-  url: absoluteUrl("/books"),
+  "@id": `${absoluteUrl("/en/books")}#supply-chain-publication`,
+  name: sustainableSupplyChainBook.title,
+  alternateName: `${sustainableSupplyChainBook.title}: ${sustainableSupplyChainBook.subtitle}`,
+  description: "An industry-driven professional and academic volume on resilient and sustainable supply-chain management.",
+  url: `${absoluteUrl("/en/books")}#supply-chain-publication`,
+  image: absoluteUrl(sustainableSupplyChainBook.cover),
+  inLanguage: "en",
+  isbn: sustainableSupplyChainBook.isbn13,
+  editor: sustainableSupplyChainBook.editors.map((name) => ({ "@type": "Person", name })),
+  publisher: { "@type": "Organization", name: "CRC Press · Taylor & Francis Group" },
+  genre: ["Supply chain management", "Sustainability", "Business and management"],
+  sameAs: sustainableSupplyChainBook.purchaseLinks.map(({ href }) => href),
+};
+
+const dawahBookJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": `${absoluteUrl("/en/books")}#dawah-publication`,
+  name: "Surah Al-Fatihah: The Seven Verses",
+  alternateName: "সুরা আল-ফাতিহা: সাতটি আয়াত",
+  description: "A Bangla reflection on Surah Al-Fatihah through gratitude, worship, guidance, accountability, and life.",
+  url: `${absoluteUrl("/en/books")}#dawah-publication`,
   image: absoluteUrl("/bookImage.webp"),
   inLanguage: "bn-BD",
   author: { "@id": `${absoluteUrl()}#person` },
@@ -34,11 +50,13 @@ const bookJsonLd = {
 };
 
 export default function EnglishBooksPage() {
-  return <InnerPage locale="en" eyebrow="Books that begin a journey of reflection" title={<>Books by <span className="gold-text">Dr. Ferdoush Saleheen</span></>} description="Each book opens a path to related audio, reflection, video, and conversation.">
-    <StructuredData data={[bookJsonLd, createBreadcrumbJsonLd([{ name: "Home", path: "/en" }, { name: "Books", path: "/en/books" }])]} />
-    <section className="py-24 md:py-32"><div className="page-shell"><SectionHeading eyebrow="Published book" description="The first publication by Dr. Ferdoush Saleheen.">Surah Al-Fatihah:<br /><span className="gold-text">The Seven Verses</span></SectionHeading><article className="grid overflow-hidden rounded-[2rem] border border-[#d6a642]/20 bg-[#0d0c0a] lg:grid-cols-[.85fr_1.15fr]">
-      <div className="relative min-h-[34rem]"><Image src="/bookImage.webp" alt="Cover of Surah Al-Fatihah: The Seven Verses" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-contain p-10" priority /></div>
-      <div className="flex flex-col justify-center border-t border-white/10 p-7 md:p-12 lg:border-l lg:border-t-0"><span className="text-xs font-semibold tracking-[0.13em] text-[#d6a642]">TAFSIR AND REFLECTION FOR LIFE</span><h2 className="mt-5 text-balance text-4xl font-medium text-white md:text-6xl">The verses that changed my perspective and life</h2><p className="mt-6 max-w-xl text-base leading-8 text-[#99958c]">A readable reflection on the seven verses recited in every salah, viewed through gratitude, knowledge of the Lord, accountability, worship, and guidance.</p><div className="mt-7 flex flex-wrap gap-2">{["Life", "Worship", "Al-Fatihah", "Guidance", "Hereafter"].map((tag) => <span key={tag} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-[#aaa69c]">{tag}</span>)}</div><div className="mt-8 flex flex-wrap gap-3"><Button asChild size="lg"><Link href={bookPurchaseUrl} target="_blank" rel="noreferrer"><ShoppingBag className="size-4" /> Buy from Rokomari</Link></Button><Button asChild size="lg" variant="outline"><Link href="/en/audiobooks"><Headphones className="size-4" /> Listen to audiobook</Link></Button></div></div>
-    </article></div></section>
-  </InnerPage>;
+  return (
+    <InnerPage
+      locale="en"
+      hero={<BooksHero locale="en" />}
+    >
+      <StructuredData data={[supplyChainBookJsonLd, dawahBookJsonLd, createBreadcrumbJsonLd([{ name: "Home", path: "/en" }, { name: "Books and Publications", path: "/en/books" }])]} />
+      <PublicationsCatalog locale="en" />
+    </InnerPage>
+  );
 }

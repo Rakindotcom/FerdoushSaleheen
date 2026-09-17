@@ -3,6 +3,7 @@ import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { BookOpen, Headphones, RotateCcw } from "lucide-react";
 
+import { AudiobookHero } from "@/components/heroes/audiobook-hero";
 import { AudiobookModalLauncher } from "@/components/audiobook-modal-launcher";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
@@ -44,12 +45,12 @@ export default function AudiobooksPage() {
 
   return (
     <InnerPage
-      eyebrow="কানে শুনুন · হৃদয়ে ধারণ করুন"
-      title={<>সুরা আল-ফাতিহা:<br /><span className="gold-text">সাতটি আয়াত অডিওবুক</span></>}
-      description="ড. ফেরদৌস সালেহীনের বইয়ের ভাবনা, ব্যাখ্যা ও আত্মঅনুসন্ধান এবার শুনুন আপনার সুবিধামতো সময়ে, যাত্রাপথে, অবসরে কিংবা নীরব মনোযোগে।"
+      locale="bn"
+      hero={<AudiobookHero locale="bn" />}
     >
       <StructuredData data={[audiobookJsonLd, createBreadcrumbJsonLd([{ name: "হোমপেজ", path: "/" }, { name: "অডিওবুক", path: "/audiobooks" }])]} />
-      <section className="py-24 md:py-32">
+      <section id="audiobook-player-section" className="py-24 md:py-32">
+
         <div className="page-shell">
           <SectionHeading
             eyebrow="বর্তমান অডিওবুক"

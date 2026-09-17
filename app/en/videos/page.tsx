@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink, Play } from "lucide-react";
 
+import { VideosHero } from "@/components/heroes/videos-hero";
 import { FacebookVideoEmbed } from "@/components/facebook-video-embed";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
@@ -20,12 +21,11 @@ export default function EnglishVideosPage() {
   return (
     <InnerPage
       locale="en"
-      eyebrow="Watch · Reflect · Apply"
-      title={<>Selected <span className="gold-text">Videos</span></>}
-      description="A collection of short videos and Reels by Dr. Ferdoush Saleheen about faith, life, Qur’anic reflection, leadership, and business."
+      hero={<VideosHero locale="en" />}
     >
       <StructuredData data={createBreadcrumbJsonLd([{ name: "Home", path: "/en" }, { name: "Videos", path: "/en/videos" }])} />
-      <section className="py-24 md:py-32">
+      <section id="video-grid" className="py-24 md:py-32">
+
         <div className="page-shell">
           <SectionHeading
             eyebrow="Facebook videos"

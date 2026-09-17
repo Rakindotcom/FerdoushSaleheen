@@ -8,32 +8,53 @@ import type { SiteLocale } from "@/lib/locale";
 import { localizePath } from "@/lib/locale";
 
 export function InnerPage({
+  hero,
   eyebrow,
   title,
   description,
   children,
   locale = "bn",
 }: {
-  eyebrow: string;
-  title: ReactNode;
-  description: string;
+  hero?: ReactNode;
+  eyebrow?: string;
+  title?: ReactNode;
+  description?: string;
   children: ReactNode;
   locale?: SiteLocale;
 }) {
   return (
     <main className="min-h-screen bg-[#050505] text-[#f7f3e8]">
       <SiteHeader />
-      <section className="relative overflow-hidden border-b border-white/[0.07] pb-20 pt-36 md:pb-28 md:pt-44">
-        <div className="grid-veil pointer-events-none absolute inset-0" />
-        <div className="paper-noise pointer-events-none absolute inset-0 opacity-[0.025]" />
-        <div className="pointer-events-none absolute -right-28 top-8 size-[30rem] rounded-full bg-[#d6a642]/[0.07] blur-[120px]" />
-        <div className="page-shell relative">
-          <Link href={localizePath("/", locale)} className="mb-10 inline-flex items-center gap-2 text-xs text-[#77736b] transition hover:text-[#d6a642]"><ArrowLeft className="size-3.5" /> {locale === "en" ? "Back to home" : "হোমে ফিরুন"}</Link>
-          <span className="eyebrow mb-6">{eyebrow}</span>
-          <h1 className="max-w-5xl text-balance text-[clamp(3.4rem,8vw,7.4rem)] font-medium leading-[.88] tracking-[-.05em] text-white">{title}</h1>
-          <p className="mt-7 max-w-2xl text-balance text-base leading-8 text-[#99958c] md:text-lg">{description}</p>
-        </div>
-      </section>
+      {hero ? (
+        hero
+      ) : (
+        <section className="relative overflow-hidden border-b border-white/[0.08] bg-[#050505] pt-32 pb-16 lg:pt-36 lg:pb-20">
+          <div className="grid-veil pointer-events-none absolute inset-0 opacity-80" />
+          <div className="paper-noise pointer-events-none absolute inset-0 opacity-[0.03]" />
+          <div className="hero-mesh-bg pointer-events-none absolute inset-0" />
+          <div className="animate-breathe pointer-events-none absolute -right-28 top-8 size-[34rem] rounded-full bg-[#d6a642]/[0.08] blur-[130px]" />
+          <div className="page-shell relative z-10">
+            <Link
+              href={localizePath("/", locale)}
+              className="group mb-8 inline-flex items-center gap-2 text-xs font-medium text-[#88847b] transition hover:text-[#d6a642]"
+            >
+              <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-1" />
+              {locale === "en" ? "Back to home" : "হোমে ফিরুন"}
+            </Link>
+            {eyebrow ? <span className="eyebrow mb-5 block">{eyebrow}</span> : null}
+            {title ? (
+              <h1 className="max-w-5xl text-balance text-[clamp(2.8rem,7vw,6.2rem)] font-medium leading-[.92] tracking-[-0.045em] text-white">
+                {title}
+              </h1>
+            ) : null}
+            {description ? (
+              <p className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-[#aaa69c] md:text-lg">
+                {description}
+              </p>
+            ) : null}
+          </div>
+        </section>
+      )}
       {children}
       <SiteFooter />
     </main>

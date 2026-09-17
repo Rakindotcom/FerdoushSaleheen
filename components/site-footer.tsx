@@ -7,8 +7,8 @@ import { profile } from "@/lib/profile-data";
 import { isEnglishPath, localizePath } from "@/lib/locale";
 
 const navigation = {
-  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["পডকাস্ট", "/podcast"], ["ভিডিও", "/videos"], ["অডিওবুক", "/audiobooks"]],
-  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["Podcast", "/podcast"], ["Videos", "/videos"], ["Audiobook", "/audiobooks"]],
+  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["সংবাদ", "/news"], ["পডকাস্ট", "/podcast"], ["ভিডিও", "/videos"], ["অডিওবুক", "/audiobooks"]],
+  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["News", "/news"], ["Podcast", "/podcast"], ["Videos", "/videos"], ["Audiobook", "/audiobooks"]],
 } as const;
 
 export function SiteFooter() {
@@ -25,7 +25,7 @@ export function SiteFooter() {
               <span className="grid size-10 place-items-center rounded-full border border-[#d6a642]/40 text-[#d6a642]">ফ</span>
               <strong className="font-medium">{locale === "en" ? "Dr. Ferdoush Saleheen" : "ড. ফেরদৌস সালেহীন"}</strong>
             </Link>
-            <p className="max-w-sm text-sm leading-6 text-[#77736b]">{locale === "en" ? "The official digital platform for his professional profile, published books, audiobook, and selected podcasts." : "পেশাগত পরিচিতি, প্রকাশিত বই এবং নির্বাচিত পডকাস্টের অফিসিয়াল ডিজিটাল প্ল্যাটফর্ম।"}</p>
+            <p className="max-w-sm text-sm leading-6 text-[#77736b]">{locale === "en" ? "The official platform for his supply-chain scholarship, professional journey, Dawah writing, and selected conversations." : "সাপ্লাই চেইন বিষয়ে গবেষণা, পেশাগত পথচলা, দাওয়াহর লেখা ও নির্বাচিত আলোচনার অফিসিয়াল প্ল্যাটফর্ম।"}</p>
           </div>
           <div>
             <h3 className="mb-4 text-xs uppercase tracking-[0.15em] text-[#b58a37]">{locale === "en" ? "Explore" : "ঘুরে দেখুন"}</h3>

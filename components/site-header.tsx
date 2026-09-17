@@ -6,9 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { LanguageMenu } from "@/components/language-menu";
-import { Button } from "@/components/ui/button";
 import { isEnglishPath, localizePath } from "@/lib/locale";
-import { bookPurchaseUrl } from "@/lib/podcast-data";
 import { cn } from "@/lib/utils";
 
 const navigation = {
@@ -16,6 +14,7 @@ const navigation = {
     ["হোমপেজ", "/"],
     ["পরিচিতি", "/about"],
     ["বই", "/books"],
+    ["সংবাদ", "/news"],
     ["পডকাস্ট", "/podcast"],
     ["ভিডিও", "/videos"],
     ["অডিওবুক", "/audiobooks"],
@@ -24,6 +23,7 @@ const navigation = {
     ["Home", "/"],
     ["About", "/about"],
     ["Books", "/books"],
+    ["News", "/news"],
     ["Podcast", "/podcast"],
     ["Videos", "/videos"],
     ["Audiobook", "/audiobooks"],
@@ -63,7 +63,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex xl:gap-4">
             {navItems.map(([label, href]) => (
               <Link
                 key={href}
@@ -81,9 +81,6 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-2">
             <LanguageMenu locale={locale} />
-            <Button asChild size="sm" className="hidden sm:inline-flex">
-              <Link href={bookPurchaseUrl} target="_blank" rel="noreferrer">{locale === "en" ? "Buy book" : "বই কিনুন"}</Link>
-            </Button>
             <button
               type="button"
               aria-expanded={open}
@@ -111,9 +108,6 @@ export function SiteHeader() {
                   {label}
                 </Link>
               ))}
-              <Button asChild className="mt-2 sm:hidden">
-                <Link href={bookPurchaseUrl} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{locale === "en" ? "Buy book" : "বই কিনুন"}</Link>
-              </Button>
             </div>
           </div>
         </div>

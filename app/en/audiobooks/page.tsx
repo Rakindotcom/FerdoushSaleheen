@@ -3,6 +3,7 @@ import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { BookOpen, Headphones, RotateCcw } from "lucide-react";
 
+import { AudiobookHero } from "@/components/heroes/audiobook-hero";
 import { AudiobookModalLauncher } from "@/components/audiobook-modal-launcher";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
@@ -45,12 +46,11 @@ export default function EnglishAudiobookPage() {
   return (
     <InnerPage
       locale="en"
-      eyebrow="Listen with attention · Carry it in your heart"
-      title={<>Surah Al-Fatihah:<br /><span className="gold-text">The Seven Verses Audiobook</span></>}
-      description="Listen to Dr. Ferdoush Saleheen's Bangla reflections and explanations whenever it suits you, while travelling, resting, or listening quietly."
+      hero={<AudiobookHero locale="en" />}
     >
       <StructuredData data={[audiobookJsonLd, createBreadcrumbJsonLd([{ name: "Home", path: "/en" }, { name: "Audiobook", path: "/en/audiobooks" }])]} />
-      <section className="py-24 md:py-32">
+      <section id="audiobook-player-section" className="py-24 md:py-32">
+
         <div className="page-shell">
           <SectionHeading
             eyebrow="Available audiobook"
