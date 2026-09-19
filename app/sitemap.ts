@@ -10,9 +10,10 @@ const routes = [
   { bn: "/audiobooks", en: "/en/audiobooks", changeFrequency: "monthly", priority: 0.8 },
   { bn: "/podcast", en: "/en/podcast", changeFrequency: "weekly", priority: 0.8 },
   { bn: "/videos", en: "/en/videos", changeFrequency: "weekly", priority: 0.8 },
+  { bn: "/gallery", en: "/en/gallery", changeFrequency: "monthly", priority: 0.8 },
 ] as const;
 
-const contentLastModified = new Date("2026-09-18T00:00:00.000Z");
+const contentLastModified = new Date("2026-09-19T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getSiteUrl();

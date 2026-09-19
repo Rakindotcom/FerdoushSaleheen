@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
     // Next.js image optimizer rejects the deployed WebP sources with HTTP 400.
     unoptimized: true,
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/vi_webp/**",
+      },
+    ],
   },
 };
 

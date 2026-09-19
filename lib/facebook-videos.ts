@@ -1,4 +1,4 @@
-export const facebookVideos = [
+const facebookVideoItems = [
   {
     id: "27828013103493509",
     url: "https://www.facebook.com/reel/27828013103493509/",
@@ -47,4 +47,15 @@ export const facebookVideos = [
     titleBn: "দুর্বলতাকে শক্তিতে রূপান্তরের তিন শর্ত",
     titleEn: "Three conditions for turning weakness into strength",
   },
+] as const;
+
+export const facebookVideos = [
+  facebookVideoItems[4],
+  facebookVideoItems[1],
+  facebookVideoItems[2],
+  facebookVideoItems[3],
+  facebookVideoItems[0],
+  facebookVideoItems[5],
+  facebookVideoItems[6],
+  facebookVideoItems[7],
 ] as const;

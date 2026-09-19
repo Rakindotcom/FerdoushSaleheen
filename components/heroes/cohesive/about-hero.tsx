@@ -35,7 +35,7 @@ export function AboutHero({ locale = "bn" }: AboutHeroProps) {
 
         <div className="gold-glow-card relative min-h-[30rem] overflow-hidden rounded-3xl border border-white/10 bg-[#0d0d0c]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_32%,rgba(214,166,66,.3),transparent_52%)]" />
-          <Image src="/fsPhoto-cutout.png" alt={isEn ? "Dr. Ferdoush Saleheen" : "ড. ফেরদৌস সালেহীন"} fill priority sizes="(max-width: 1024px) 100vw, 460px" className="object-contain object-bottom grayscale contrast-110" />
+          <Image src="/fsPhoto-cutout.webp" alt={isEn ? "Dr. Ferdoush Saleheen" : "ড. ফেরদৌস সালেহীন"} fill priority sizes="(max-width: 1024px) 100vw, 460px" className="object-contain object-bottom grayscale contrast-110" />
           <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-[#090908]/88 p-5 backdrop-blur-xl">
             <span className="text-xs font-semibold text-[#d6a642]">{isEn ? "Current appointment" : "বর্তমান দায়িত্ব"}</span>
             <p className="mt-2 font-medium leading-snug text-white">{data.currentTitle}</p>

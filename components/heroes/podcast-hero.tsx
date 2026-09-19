@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Mic2, Play, Radio, Sparkles, Tv, Youtube } from "lucide-react";
 
@@ -121,10 +122,11 @@ export function PodcastHero({ locale = "bn" }: PodcastHeroProps) {
 
               {/* YouTube Thumbnail Preview */}
               <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`https://img.youtube.com/vi/${featured.videoId}/hqdefault.jpg`}
+                <Image
+                  src={`https://i.ytimg.com/vi_webp/${featured.videoId}/hqdefault.webp`}
                   alt={isEn ? featured.titleEn : featured.titleBn}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 34vw"
                   className="size-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/35 flex items-center justify-center">

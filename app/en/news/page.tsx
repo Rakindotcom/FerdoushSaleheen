@@ -13,7 +13,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "Media coverage, opinion articles, and official publication news related to Dr. Ferdoush Saleheen’s supply-chain leadership and scholarship.",
   banglaPath: "/news",
   englishPath: "/en/news",
-  image: "/news/gulf-news-dr-saleheen.jpg",
+  image: "/news/gulf-news-dr-saleheen.webp",
 });
 
 const newsCollectionJsonLd = {

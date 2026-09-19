@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 import { AboutHero } from "@/components/heroes/cohesive/about-hero";
+import { BritishpediaFeature } from "@/components/britishpedia-feature";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
@@ -75,6 +76,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <BritishpediaFeature locale="bn" />
 
       <section className="border-y border-white/[0.07] bg-[#0a0a09] py-24 md:py-32">
         <div className="page-shell">

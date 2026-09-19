@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, BookOpen, ExternalLink, GraduationCap, Headphones, Linkedin, Mic2, Play, UserRound } from "lucide-react";
 
 import { HomeHero } from "@/components/heroes/cohesive/home-hero";
+import { BritishpediaFeature } from "@/components/britishpedia-feature";
+import { HomePhotoCarousel } from "@/components/home-photo-carousel";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PublicationsOverview } from "@/components/publications-overview";
@@ -56,6 +58,8 @@ export default function HomePage() {
           <Link href="/about" className="group inline-flex items-center gap-2 text-sm text-[#d6a642]">পরিচিতি পড়ুন <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></Link>
         </div>
       </section>
+
+      <HomePhotoCarousel locale="bn" />
 
       <section id="professional-journey" className="relative overflow-hidden border-b border-white/[0.06] py-24 md:py-32">
         <div className="pointer-events-none absolute -left-40 top-24 size-[28rem] rounded-full bg-[#d6a642]/[0.06] blur-[120px]" />
@@ -128,6 +132,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <BritishpediaFeature locale="bn" />
 
       <section className="relative overflow-hidden py-24 md:py-32">
         <div className="page-shell">

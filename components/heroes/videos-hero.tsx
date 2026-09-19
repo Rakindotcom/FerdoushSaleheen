@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clapperboard, ExternalLink, Facebook, Film, Play, Sparkles, Video } from "lucide-react";
 
@@ -109,10 +110,11 @@ export function VideosHero({ locale = "bn" }: VideosHeroProps) {
 
               {/* Video preview teaser */}
               <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[#141412]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={`/facebook-videos/${facebookVideos[0].id}.webp`}
                   alt={isEn ? facebookVideos[0].titleEn : facebookVideos[0].titleBn}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 34vw"
                   className="size-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">

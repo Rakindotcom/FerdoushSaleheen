@@ -7,8 +7,8 @@ import { profile } from "@/lib/profile-data";
 import { isEnglishPath, localizePath } from "@/lib/locale";
 
 const navigation = {
-  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["সংবাদ", "/news"], ["পডকাস্ট", "/podcast"], ["ভিডিও", "/videos"], ["অডিওবুক", "/audiobooks"]],
-  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["News", "/news"], ["Podcast", "/podcast"], ["Videos", "/videos"], ["Audiobook", "/audiobooks"]],
+  bn: [["হোমপেজ", "/"], ["পরিচিতি", "/about"], ["বই", "/books"], ["সংবাদ", "/news"], ["পডকাস্ট", "/podcast"], ["ভিডিও", "/videos"], ["গ্যালারি", "/gallery"], ["অডিওবুক", "/audiobooks"]],
+  en: [["Home", "/"], ["About", "/about"], ["Books", "/books"], ["News", "/news"], ["Podcast", "/podcast"], ["Videos", "/videos"], ["Gallery", "/gallery"], ["Audiobook", "/audiobooks"]],
 } as const;
 
 export function SiteFooter() {

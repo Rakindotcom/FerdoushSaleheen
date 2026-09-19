@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2, ExternalLink, Facebook, GraduationCap, Linkedin, Mail, MapPin } from "lucide-react";
 
 import { AboutHero } from "@/components/heroes/cohesive/about-hero";
+import { BritishpediaFeature } from "@/components/britishpedia-feature";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,8 @@ export default function EnglishAboutPage() {
 
 
       <section className="py-24 md:py-32"><div className="page-shell"><SectionHeading eyebrow="About" description="Industry transformation, academic leadership, teaching, research, editorial service, and publishing in one professional journey.">Two decades of <span className="gold-text">experience and leadership</span></SectionHeading><div className="space-y-6">{profile.summary.map((paragraph, index) => <div key={paragraph} className="grid gap-4 border-b border-white/[0.07] pb-6 sm:grid-cols-[2.5rem_1fr]"><span className="text-xs text-[#8f6929]">{String(index + 1).padStart(2, "0")}</span><p className="text-base leading-8 text-[#b0aca3] md:text-lg">{paragraph}</p></div>)}</div></div></section>
+
+      <BritishpediaFeature locale="en" />
 
       <section className="border-y border-white/[0.07] bg-[#0a0a09] py-24 md:py-32"><div className="page-shell"><SectionHeading eyebrow="Experience" description="Selected academic, editorial, and corporate appointments from the professional profile.">Professional <span className="gold-text">experience</span></SectionHeading><div className="grid gap-5 lg:grid-cols-2">{experiences.map((experience) => <article key={experience.organization} className="rounded-2xl border border-white/[0.08] bg-[#0e0e0d] p-6"><div className="flex items-center justify-between gap-4"><h3 className="text-xl font-medium text-white">{experience.organization}</h3>{experience.logo ? <div className={`relative h-14 w-32 rounded-lg ${experience.logo.onDark ? "bg-[#151515]" : "bg-[#f4f1e9]"}`}><Image src={experience.logo.src} alt={`${experience.organization} logo`} fill sizes="128px" className="object-contain p-2" /></div> : null}</div><div className="mt-6 space-y-5">{experience.roles.map((role) => <div key={role.title}><h4 className="font-medium text-[#e7e3dc]">{role.title}</h4><p className="mt-1 text-xs text-[#77736b]">{role.period}{role.location ? ` · ${role.location}` : ""}</p></div>)}</div>{experience.descriptions?.map((description) => <p key={description} className="mt-5 border-t border-white/[0.07] pt-5 text-sm leading-7 text-[#8e8a81]">{description}</p>)}</article>)}</div></div></section>
 

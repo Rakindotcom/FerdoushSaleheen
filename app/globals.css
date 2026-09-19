@@ -204,6 +204,56 @@ input {
   line-height: 0.88;
 }
 
+.home-hero-layout {
+  min-height: 38rem;
+}
+
+.home-hero-title {
+  max-width: 12ch;
+}
+
+.home-hero-title-bn {
+  max-width: 13ch;
+}
+
+.home-hero-stage {
+  min-height: 14rem;
+}
+
+.home-hero-orbit,
+.home-hero-orbit-inner {
+  aspect-ratio: 1;
+}
+
+.home-hero-orbit {
+  width: min(15rem, calc(100vw - 3rem));
+}
+
+.home-hero-orbit-inner {
+  top: 2.5rem;
+  width: min(12rem, calc(100vw - 6rem));
+}
+
+@media (min-width: 40rem) {
+  .home-hero-stage {
+    min-height: 15rem;
+  }
+
+  .home-hero-orbit {
+    width: 17rem;
+  }
+
+  .home-hero-orbit-inner {
+    width: 14rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .home-hero-layout {
+    min-height: 40rem;
+  }
+}
+
 .hero-kicker {
   font-size: 0.68rem;
   font-weight: 700;

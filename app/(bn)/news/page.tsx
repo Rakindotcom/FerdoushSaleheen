@@ -13,7 +13,7 @@ export const metadata: Metadata = createPageMetadata({
   description: "ড. ফেরদৌস সালেহীনের সাপ্লাই চেইন নেতৃত্ব ও গবেষণাসংশ্লিষ্ট সংবাদ, মতামত নিবন্ধ এবং অফিসিয়াল প্রকাশনার আপডেট।",
   banglaPath: "/news",
   englishPath: "/en/news",
-  image: "/news/gulf-news-dr-saleheen.jpg",
+  image: "/news/gulf-news-dr-saleheen.webp",
 });
 
 const newsCollectionJsonLd = {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Play } from "lucide-react";
 
 import { HeroEyebrow, HeroFrame, HeroTextLink, HeroTitle } from "@/components/heroes/hero-parts";
@@ -24,8 +25,7 @@ export function PodcastHero({ locale = "bn" }: PodcastHeroProps) {
 
         <a href={featured.href} target="_blank" rel="noreferrer" className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0d0d0c] p-2 sm:p-3">
           <div className="relative aspect-video overflow-hidden rounded-[1.15rem] bg-black">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`https://img.youtube.com/vi/${featured.videoId}/hqdefault.jpg`} alt={isEn ? featured.titleEn : featured.titleBn} className="size-full object-cover transition duration-700 group-hover:scale-[1.025]" />
+            <Image src={`https://i.ytimg.com/vi_webp/${featured.videoId}/hqdefault.webp`} alt={isEn ? featured.titleEn : featured.titleBn} fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
             <div className="absolute inset-0 bg-black/20 transition group-hover:bg-black/10" />
             <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#d6a642] text-[#090806] shadow-2xl transition group-hover:scale-105"><Play className="ml-1 size-6 fill-current" /></span>
           </div>

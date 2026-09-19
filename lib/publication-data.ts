@@ -5,7 +5,7 @@ export const sustainableSupplyChainBook = {
   publisher: "CRC Press · Taylor & Francis Group",
   isbn10: "1041293135",
   isbn13: "9781041293132",
-  cover: "/sustainable-supply-chain-management.png",
+  cover: "/sustainable-supply-chain-management.webp",
   purchaseLinks: [
     {
       label: "Amazon US",

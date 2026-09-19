@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -17,6 +18,7 @@ const navigation = {
     ["সংবাদ", "/news"],
     ["পডকাস্ট", "/podcast"],
     ["ভিডিও", "/videos"],
+    ["গ্যালারি", "/gallery"],
     ["অডিওবুক", "/audiobooks"],
   ],
   en: [
@@ -26,6 +28,7 @@ const navigation = {
     ["News", "/news"],
     ["Podcast", "/podcast"],
     ["Videos", "/videos"],
+    ["Gallery", "/gallery"],
     ["Audiobook", "/audiobooks"],
   ],
 } as const;
@@ -55,12 +58,20 @@ export function SiteHeader() {
         )}
       >
         <div className="flex h-[4.5rem] items-center justify-between px-3 md:px-5">
-          <Link href={homeHref} className="group flex items-center gap-3" aria-label={locale === "en" ? "Ferdoush Saleheen home page" : "ফেরদৌস সালেহীন হোমপেজ"}>
-            <span className="grid size-10 place-items-center rounded-full border border-[#d6a642]/40 bg-[#d6a642]/10 text-lg font-semibold text-[#e6bc61] transition group-hover:border-[#e6bc61]">ফ</span>
-            <span className="leading-none">
-              <strong className="block text-[1rem] font-semibold text-white">{locale === "en" ? "Ferdoush Saleheen" : "ফেরদৌস সালেহীন"}</strong>
-              <small className="mt-1 block text-[0.58rem] uppercase tracking-[0.24em] text-[#9e9a91]">{locale === "en" ? "Official Platform" : "অফিসিয়াল প্ল্যাটফর্ম"}</small>
-            </span>
+          <Link
+            href={homeHref}
+            className="group shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-[0_8px_24px_rgba(0,0,0,.18)] ring-1 ring-white/15 transition hover:ring-[#d6a642]/70"
+            aria-label={locale === "en" ? "Dr. Ferdoush Saleheen Talks home page" : "ড. ফেরদৌস সালেহীন টকস হোমপেজ"}
+          >
+            <Image
+              src="/brand-logo.webp"
+              alt="Dr. Ferdoush Saleheen Talks — Life Healing with Islamic Values"
+              width={398}
+              height={135}
+              priority
+              sizes="160px"
+              className="h-auto w-40"
+            />
           </Link>
 
           <div className="hidden items-center gap-3 lg:flex xl:gap-4">
