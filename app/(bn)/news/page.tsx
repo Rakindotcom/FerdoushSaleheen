@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { NewsHero } from "@/components/heroes/news-hero";
+import { NewsHero } from "@/components/heroes/cohesive/news-hero";
 import { InnerPage } from "@/components/inner-page";
 import { NewsIndex } from "@/components/news-index";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink, Play } from "lucide-react";
 
-import { VideosHero } from "@/components/heroes/videos-hero";
+import { VideosHero } from "@/components/heroes/cohesive/videos-hero";
 import { FacebookVideoEmbed } from "@/components/facebook-video-embed";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";

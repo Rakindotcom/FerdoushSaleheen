@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, BookOpen, ExternalLink, GraduationCap, Headphones, Linkedin, Mic2, Play, UserRound } from "lucide-react";
 
-import { HomeHero } from "@/components/heroes/home-hero";
+import { HomeHero } from "@/components/heroes/cohesive/home-hero";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PublicationsOverview } from "@/components/publications-overview";

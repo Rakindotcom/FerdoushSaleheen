@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2, ExternalLink, Facebook, GraduationCap, Linkedin, Mail, MapPin } from "lucide-react";
 
-import { AboutHero } from "@/components/heroes/about-hero";
+import { AboutHero } from "@/components/heroes/cohesive/about-hero";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";

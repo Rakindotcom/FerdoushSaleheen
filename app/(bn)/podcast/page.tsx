@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 import { Play } from "lucide-react";
 
-import { PodcastHero } from "@/components/heroes/podcast-hero";
+import { PodcastHero } from "@/components/heroes/cohesive/podcast-hero";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";
 import { YouTubeEmbed } from "@/components/youtube-embed";

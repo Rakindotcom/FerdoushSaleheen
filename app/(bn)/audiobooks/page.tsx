@@ -3,7 +3,7 @@ import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { BookOpen, Headphones, RotateCcw } from "lucide-react";
 
-import { AudiobookHero } from "@/components/heroes/audiobook-hero";
+import { AudiobookHero } from "@/components/heroes/cohesive/audiobook-hero";
 import { AudiobookModalLauncher } from "@/components/audiobook-modal-launcher";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";

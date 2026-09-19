@@ -5,6 +5,7 @@
 /.next
 /.next-dev
 /out
+/tmp
 
 # local configuration
 .env*

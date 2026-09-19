@@ -180,6 +180,65 @@ input {
   pointer-events: none;
 }
 
+.editorial-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.34'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.editorial-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+.hero-display {
+  font-size: clamp(3.65rem, 9vw, 8.75rem);
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  line-height: 0.79;
+}
+
+.hero-display-bn {
+  font-size: clamp(3.25rem, 8.2vw, 7.5rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+}
+
+.hero-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-rule {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.24;
+}
+
+@keyframes editorialDrift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.16); }
+  50% { transform: scaleY(1); }
+}
+
+.editorial-drift {
+  animation: editorialDrift 9s ease-in-out infinite;
+}
+
+.hero-wave span {
+  animation: waveform 1.45s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-wave span:nth-child(2n) { animation-delay: -0.9s; }
+.hero-wave span:nth-child(3n) { animation-delay: -0.45s; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

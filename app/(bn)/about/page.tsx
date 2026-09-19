@@ -20,7 +20,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { AboutHero } from "@/components/heroes/about-hero";
+import { AboutHero } from "@/components/heroes/cohesive/about-hero";
 import { InnerPage, SectionHeading } from "@/components/inner-page";
 import { createBreadcrumbJsonLd, createProfilePageJsonLd, StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";

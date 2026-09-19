@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { BooksHero } from "@/components/heroes/books-hero";
+import { BooksHero } from "@/components/heroes/cohesive/books-hero";
 import { InnerPage } from "@/components/inner-page";
 import { PublicationsCatalog } from "@/components/publications-catalog";
 import { createBreadcrumbJsonLd, StructuredData } from "@/components/structured-data";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
-import { LegalHero } from "@/components/heroes/legal-hero";
+import { LegalHero } from "@/components/heroes/cohesive/legal-hero";
 import { InnerPage } from "@/components/inner-page";
 import { LegalContent } from "@/components/legal-content";
 
